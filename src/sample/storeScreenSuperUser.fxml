@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="585.0" prefWidth="776.0" style="-fx-background-color: #DDDDDD;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <AnchorPane layoutX="87.0" layoutY="-1.0" maxWidth="1.7976931348623157E308" prefHeight="179.0" prefWidth="776.0" style="-fx-background-color: #3196DE;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
+         <children>
+            <Text fontSmoothingType="LCD" layoutX="578.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID : " wrappingWidth="57.6171875">
+               <font>
+                  <Font name="Kristen ITC" size="24.0" />
+               </font>
+            </Text>
+            <Text layoutX="636.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;ID&gt;">
+               <font>
+                  <Font name="Kristen ITC" size="24.0" />
+               </font>
+            </Text>
+            <Button layoutX="30.0" layoutY="31.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="91.0" style="-fx-background-radius: 8PX; -fx-background-color: #FFF;" text="  BACK">
+               <font>
+                  <Font name="Kristen ITC" size="12.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon glyphName="ARROW_LEFT" size="1.3em" text="" />
+               </graphic>
+            </Button>
+         </children></AnchorPane>
+
+        
+
+        <AnchorPane layoutX="29.0" layoutY="94.0" prefHeight="461.0" prefWidth="716.0" style="-fx-background-color: white; -fx-background-radius: 8px;" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="94.0">
+         <children>
+            <ImageView fitHeight="165.0" fitWidth="179.0" layoutX="51.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@store-logo-icon-90118.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="69.0" layoutY="273.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="128.0" style="-fx-background-radius: 8PX;" text=" PRODUCTS">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon fill="#2125f8" glyphName="SEARCH" size="1.4em" text="" wrappingWidth="15.142857551574707" />
+               </graphic>
+            </Button>
+            <Button layoutX="69.0" layoutY="345.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="128.0" style="-fx-background-radius: 8PX;" text="  DELETE ">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon fill="#eb0808" glyphName="REMOVE" size="2em" wrappingWidth="22.14285659790039" />
+               </graphic>
+            </Button>
+            <TextField layoutX="488.0" layoutY="129.0" prefHeight="33.0" prefWidth="165.0" promptText="&lt;NAME&gt;" />
+            <Text layoutX="397.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="STORE" textAlignment="CENTER" underline="true" wrappingWidth="91.13671875">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Text layoutX="328.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Name " textAlignment="CENTER" wrappingWidth="81.5625">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
+            <TextField layoutX="488.0" layoutY="200.0" prefHeight="33.0" prefWidth="165.0" promptText="&lt;ADMIN&gt;" />
+            <Text layoutX="337.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
+            <TextField layoutX="488.0" layoutY="276.0" prefHeight="33.0" prefWidth="165.0" promptText="&lt;ID&gt;" />
+            <Text layoutX="278.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Linked Warehouse ID" wrappingWidth="181.99999153614044">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="256.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Linked Warehouse Name" wrappingWidth="204.99999153614044">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <TextField layoutX="488.0" layoutY="351.0" prefHeight="33.0" prefWidth="165.0" promptText="&lt;NAME&gt;" />
+         </children></AnchorPane>
+    </children>
+</AnchorPane>
