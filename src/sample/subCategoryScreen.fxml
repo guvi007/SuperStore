@@ -46,6 +46,14 @@
                         <Font name="System Bold" size="18.0" />
                     </font>
                 </Text>
+            <Button layoutX="577.0" layoutY="54.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="86.0" text="SORT">
+               <font>
+                  <Font name="Verdana" size="13.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon glyphName="SORT_ALPHA_ASC" size="1.5em" />
+               </graphic>
+            </Button>
             </children>
         </AnchorPane>
     </children>

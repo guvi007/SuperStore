@@ -28,6 +28,14 @@
                     </font>
                 </Button>
                 <FontAwesomeIcon glyphName="POWER_OFF" layoutX="743.0" layoutY="35.0" size="2em" text="" wrappingWidth="1.0" />
+            <Button layoutX="16.0" layoutY="9.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="91.0" style="-fx-background-radius: 8PX; -fx-background-color: #FFF;" text="  BACK">
+               <font>
+                  <Font name="Kristen ITC" size="12.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon glyphName="ARROW_LEFT" size="1.3em" text="" />
+               </graphic>
+            </Button>
             </children></AnchorPane>
       <ScrollPane layoutX="13.0" layoutY="182.0" prefHeight="447.0" prefWidth="811.0">
          <content>
