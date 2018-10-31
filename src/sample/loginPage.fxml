@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -11,7 +12,17 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="577.0" prefWidth="776.0" style="-fx-background-color: #DDDDDD;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane layoutX="87.0" layoutY="-1.0" maxWidth="1.7976931348623157E308" prefHeight="178.0" prefWidth="654.0" style="-fx-background-color: #3196DE;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0" />
+      <AnchorPane layoutX="87.0" layoutY="-1.0" maxWidth="1.7976931348623157E308" prefHeight="178.0" prefWidth="654.0" style="-fx-background-color: #3196DE;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
+         <children>
+            <Button layoutX="30.0" layoutY="23.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="91.0" style="-fx-background-radius: 8PX; -fx-background-color: #FFF;" text="  BACK">
+               <font>
+                  <Font name="Kristen ITC" size="12.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon glyphName="ARROW_LEFT" size="1.3em" text="" />
+               </graphic>
+            </Button>
+         </children></AnchorPane>
       <AnchorPane layoutX="140.0" layoutY="87.0" prefHeight="500.0" prefWidth="1000.0" style="-fx-background-color: white; -fx-background-radius: 8px;" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="100.0">
          <children>
             <ImageView fitHeight="110.0" fitWidth="500.0" layoutX="213.0" layoutY="31.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="213.0" AnchorPane.rightAnchor="213.0">

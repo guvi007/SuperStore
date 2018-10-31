@@ -15,12 +15,12 @@
     <children>
         <AnchorPane layoutX="87.0" layoutY="-1.0" maxWidth="1.7976931348623157E308" prefHeight="179.0" prefWidth="776.0" style="-fx-background-color: #3196DE;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
             <children>
-                <Text fontSmoothingType="LCD" layoutX="578.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID : " wrappingWidth="57.6171875">
+                <Text fontSmoothingType="LCD" layoutX="330.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID : " wrappingWidth="57.6171875">
                     <font>
                         <Font name="Kristen ITC" size="24.0" />
                     </font>
                 </Text>
-                <Text layoutX="636.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;ID&gt;">
+                <Text layoutX="388.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;ID&gt;">
                     <font>
                         <Font name="Kristen ITC" size="24.0" />
                     </font>
@@ -33,6 +33,14 @@
                         <FontAwesomeIcon glyphName="ARROW_LEFT" size="1.3em" text="" />
                     </graphic>
                 </Button>
+            <Button alignment="BOTTOM_RIGHT" contentDisplay="TOP" layoutX="662.0" layoutY="17.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="77.0" style="-fx-background-color: white; -fx-background-radius: 8px;" text=" Sign Out" underline="true">
+               <font>
+                  <Font name="Kristen ITC" size="12.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon glyphName="POWER_OFF" size="2em" text="" wrappingWidth="24.0" />
+               </graphic>
+            </Button>
             </children></AnchorPane>
 
 

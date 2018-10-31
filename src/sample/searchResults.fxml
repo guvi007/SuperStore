@@ -17,7 +17,7 @@
         </Text>
         <AnchorPane maxWidth="1.7976931348623157E308" prefHeight="120.0" prefWidth="776.0" style="-fx-background-color: #3196DE;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <Text fill="WHITE" layoutX="14.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME, &lt;enduser&gt;">
+                <Text fill="WHITE" layoutX="14.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME, &lt;enduser&gt;">
                     <font>
                         <Font size="17.0" />
                     </font>
@@ -33,6 +33,14 @@
                   <Font size="28.0" />
                </font>
             </Text>
+            <Button layoutX="14.0" layoutY="9.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="91.0" style="-fx-background-radius: 8PX; -fx-background-color: #FFF;" text="  BACK">
+               <font>
+                  <Font name="Kristen ITC" size="12.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon glyphName="ARROW_LEFT" size="1.3em" text="" />
+               </graphic>
+            </Button>
             </children></AnchorPane>
         <ScrollPane layoutX="13.0" layoutY="159.0" prefHeight="470.0" prefWidth="811.0">
             <content>
