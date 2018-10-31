@@ -32,7 +32,7 @@
                     </font>
                 </Text>
             </children></AnchorPane>
-        <AnchorPane layoutX="48.0" layoutY="68.0" prefHeight="490.0" prefWidth="682.0" style="-fx-background-color: white; -fx-background-radius: 8px;" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="48.0" AnchorPane.rightAnchor="46.0" AnchorPane.topAnchor="68.0">
+        <AnchorPane layoutX="58.0" layoutY="108.0" prefHeight="455.0" prefWidth="660.0" style="-fx-background-color: white; -fx-background-radius: 8px;" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="58.0" AnchorPane.rightAnchor="58.0" AnchorPane.topAnchor="108.0">
             <children>
                 <ImageView fitHeight="110.0" fitWidth="500.0" layoutX="263.0" layoutY="90.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="263.0" AnchorPane.rightAnchor="309.0">
                     <image>
