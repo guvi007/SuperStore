@@ -35,7 +35,7 @@
         </AnchorPane>
         <AnchorPane layoutX="30.0" layoutY="102.0" prefHeight="461.0" prefWidth="716.0" style="-fx-background-color: white; -fx-background-radius: 8px;" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="102.0">
          <children>
-            <Button layoutX="67.0" layoutY="426.0" mnemonicParsing="false" text="Process Selected from other Warehouse">
+            <Button layoutX="67.0" layoutY="426.0" mnemonicParsing="false" text="Process from other Warehouses">
                <graphic>
                   <FontAwesomeIcon glyphName="GEARS" />
                </graphic>

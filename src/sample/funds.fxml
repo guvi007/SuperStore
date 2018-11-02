@@ -21,7 +21,7 @@
          <children>
             <Button layoutX="38.0" layoutY="95.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="78.0" text="Confirm">
                <graphic>
-                  <FontAwesomeIcon fill="#14d10a" glyphName="CHECK" selectionFill="#33e314" />
+                  <FontAwesomeIcon fill="#14d10a" glyphName="CHECK" />
                </graphic>
             </Button>
             <Button layoutX="246.0" layoutY="97.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="Cancel">
