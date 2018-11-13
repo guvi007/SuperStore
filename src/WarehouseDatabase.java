@@ -1,3 +1,5 @@
+import sample.Building;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +23,15 @@ public class WarehouseDatabase {
         for (Building warehouse : this.warehouses) {
             warehouse = (Warehouse) warehouse;
             return (Warehouse) warehouse;
+        }
+    }
+
+    Warehouse searchWarehouse(String ID) {
+        for (Building warehouse : this.warehouses)
+        {
+            if (warehouse.getId.equals(ID)) {
+                return warehouse;
+            }
         }
     }
 
