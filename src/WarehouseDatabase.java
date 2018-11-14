@@ -19,7 +19,7 @@ public class WarehouseDatabase {
         return this.warehouses;
     }
 
-    Warehouse optimalWarehouse(Warehouse w, Product p) {
+    Warehouse optimalWarehouse(String productID, int quantity) {
         for (Building warehouse : this.warehouses) {
             warehouse = (Warehouse) warehouse;
             return (Warehouse) warehouse;
