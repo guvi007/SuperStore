@@ -1,10 +1,10 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Warehouse implements Building {
     private final String id;
     private final String name;
     private List<Store> stores = new ArrayList<Store>();
-
 
     public Warehouse() {
         id = null;
