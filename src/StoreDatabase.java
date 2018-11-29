@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.List;
 
-public class StoreDatabase {
+public class StoreDatabase extends Database{
 
     private HashMap<String, Building> stores;
     private HashMap<String, User> storeAdmins;
@@ -16,15 +16,19 @@ public class StoreDatabase {
         numStores = 0;
     }
 
-    Store searchStore() {
-
+    Building searchStore(String parameter) {
+        if(nameToIdStores.containsKey(parameter)) {
+            parameter = nameToIdStores.get(parameter);
+        }
+        if(stores.containsKey(parameter)) {
+            return stores.get(parameter);
+        }
+        else {
+            return null;
+        }
     }
 
-    List<Building> getStoresList() {
-
-    }
-
-    boolean checkId(String Id) {
+    boolean checkAdminId(String Id) {
         if(storeAdmins.containsKey(Id))
             return false;
         return true;

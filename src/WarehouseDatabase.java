@@ -1,38 +1,42 @@
-import sample.Building;
+import java.util.HashMap;
 
-import java.util.ArrayList;
-import java.util.List;
+public class WarehouseDatabase extends Database{
 
-public class WarehouseDatabase {
-
-    private List<Building> warehouses;
+    private HashMap<String, Building> warehouses;
+    private HashMap<String, User> warehouseAdmins;
+    private HashMap<String, String> nameToIdWarehouse, nameToIdAdmins;
+    private int numWarehouse;
 
     WarehouseDatabase() {
-        this.warehouses = new ArrayList<Building>();
+        warehouses = new HashMap<>();
+        warehouseAdmins = new HashMap<>();
+        nameToIdAdmins = new HashMap<>();
+        nameToIdWarehouse = new HashMap<>();
+        numWarehouse = 0;
     }
 
-    void addWarehouse(Warehouse warehouse) {
-        this.warehouses.add(warehouse);
-    }
-
-    List<Building> getWarehouseList() {
-        return this.warehouses;
-    }
-
-    Warehouse optimalWarehouse(String productID, int quantity) {
-        for (Building warehouse : this.warehouses) {
-            warehouse = (Warehouse) warehouse;
-            return (Warehouse) warehouse;
-        }
-    }
-
-    Warehouse searchWarehouse(String ID) {
-        for (Building warehouse : this.warehouses)
-        {
-            if (warehouse.getId.equals(ID)) {
-                return warehouse;
-            }
-        }
-    }
+//    void addWarehouse(Warehouse warehouse) {
+//
+//    }
+//
+//    List<Building> getWarehouseList() {
+//
+//    }
+//
+//    Warehouse optimalWarehouse(String productID, int quantity) {
+//        for (Building warehouse : this.warehouses) {
+//            warehouse = (Warehouse) warehouse;
+//            return (Warehouse) warehouse;
+//        }
+//    }
+//
+//    Warehouse searchWarehouse(String ID) {
+//        for (Building warehouse : this.warehouses)
+//        {
+//            if (warehouse.getId.equals(ID)) {
+//                return warehouse;
+//            }
+//        }
+//    }
 
 }

@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class EndUserDatabase {
+public class EndUserDatabase extends Database{
 
     private List<User> endUsers;
 
@@ -13,7 +13,7 @@ public class EndUserDatabase {
         return this.endUsers;
     }
 
-    void addEndUser(EndUser endUser) {
+    void addEndUser(User endUser) {
         this.endUsers.add(endUser);
     }
 
