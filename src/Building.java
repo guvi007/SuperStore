@@ -1,8 +1,8 @@
 public interface Building {
 
-    void addProduct(Product product);
-    void deleteProduct(Product product);
+    void addStuff(String Category, Object stuff);
+    void deleteStuff(String parentCategory, Object stuff);
     void modifyProduct(Product product);
-    Product returnProduct();
+    Product returnProduct(Product p);
     boolean stockChecker(Product p);
 }

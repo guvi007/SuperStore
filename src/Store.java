@@ -1,4 +1,3 @@
-
 public class Store implements Building {
 
     private int d,h,k;
@@ -19,14 +18,15 @@ public class Store implements Building {
 
 
     @Override
-    public void addProduct(Product product) {
-        this.catalogue.addProduct(product);
+    public void addStuff(String Category, Object stuff) {
+        this.catalogue.addStuff(Category, stuff);
     }
 
     @Override
-    public void deleteProduct(Product product) {
-        this.catalogue.deleteProduct(product);
+    public void deleteStuff(String parentCategory, Object stuff) {
+        this.catalogue.deleteStuff(parentCategory, stuff);
     }
+
 
     @Override
     public void modifyProduct(Product product) {
@@ -34,13 +34,13 @@ public class Store implements Building {
     }
 
     @Override
-    public Product returnProduct() {
-
+    public Product returnProduct(Product p) {
+        return p;
     }
 
     @Override
     public boolean stockChecker(Product p) {
-
+        
     }
 
     public int getK() {
