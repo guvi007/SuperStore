@@ -1,19 +1,10 @@
 public abstract class User {
 
-    private final String name, id, password;
+    private final String Name, ID, password;
 
-    User(String name, String id, String password) {
-        this.name = name;
-        this.id = id;
+    User(String name, String ID, String password) {
+        this.ID = ID;
         this.password = password;
+        this.Name = name;
     }
-
-    String getName() {
-        return this.name;
-    }
-
-    public String getId() {
-        return id;
-    }
-
 }

@@ -23,7 +23,7 @@ public class WarehouseAdmin extends User {
     }
 
     void modifyProduct(String productID, int quantity, int price) {
-        for (myWarehouse.)
+        return;
     }
 
 }
