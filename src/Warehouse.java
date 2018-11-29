@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Warehouse implements Building {
+    private static int idForAll;
     private final String id;
     private final String name;
     private List<Store> stores = new ArrayList<Store>();
@@ -9,7 +10,7 @@ public class Warehouse implements Building {
     public Warehouse() {
         id = null;
         name = null;
-    };
+    }
 
     public Warehouse(String name) {
         this.id = "0";
