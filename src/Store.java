@@ -1,14 +1,13 @@
-import com.sun.org.apache.xml.internal.resolver.Catalog;
 
 public class Store implements Building {
 
     private int d,h,k;
     private final String name, ID;
-    private Warehouse linkedWarehouse;
-    private StoreAdmin myAdmin;
+    private Building linkedWarehouse;
+    private User myAdmin;
     private Catalogue catalogue;
 
-    Store(String name, String ID, Warehouse w) {
+    Store(String name, String ID, Building w) {
         this.name = name;
         this.ID = ID;
         setK(0);
@@ -68,15 +67,15 @@ public class Store implements Building {
         this.d = d;
     }
 
-    public Warehouse getLinkedWarehouse() {
+    public Building getLinkedWarehouse() {
         return linkedWarehouse;
     }
 
-    public void setLinkedWarehouse(Warehouse linkedWarehouse) {
+    public void setLinkedWarehouse(Building linkedWarehouse) {
         this.linkedWarehouse = linkedWarehouse;
     }
 
-    public void setMyAdmin(StoreAdmin myAdmin) {
+    public void setMyAdmin(User myAdmin) {
         this.myAdmin = myAdmin;
     }
 }

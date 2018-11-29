@@ -1,8 +1,8 @@
 public class StoreAdmin extends User {
 
-    Store myStore;
+    Building myStore;
 
-    StoreAdmin(String name, String ID, String password, Store s) {
+    StoreAdmin(String name, String ID, String password, Building s) {
         super(name, ID, password);
         this.myStore = s;
     }

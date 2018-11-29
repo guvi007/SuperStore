@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -11,11 +10,13 @@ public class StoreDatabase {
 
     StoreDatabase() {
         stores = new HashMap<>();
-        nameToId = new HashMap<>();
+        storeAdmins = new HashMap<>();
+        nameToIdAdmins = new HashMap<>();
+        nameToIdStores = new HashMap<>();
         numStores = 0;
     }
 
-    Store searchStore(String ) {
+    Store searchStore() {
 
     }
 
@@ -34,7 +35,7 @@ public class StoreDatabase {
 
         Building store = new Store(storeName,storeId , Warehouse);
         User storeAdmin = new StoreAdmin(adminName, adminLogin, adminPassword, store);
-        store.setMyAdmin(storeAdmin);
+        ((Store) store).setMyAdmin(storeAdmin);
         ++numStores;
 
         stores.put(storeId, store);
