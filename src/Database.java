@@ -1,5 +1,3 @@
-package sample;
-
 public class Database {
     private WarehouseDatabase warehouseDatabase = new WarehouseDatabase();
     private StoreDatabase storeDatabase = new StoreDatabase();
