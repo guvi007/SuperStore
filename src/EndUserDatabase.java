@@ -1,19 +1,19 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class EndUserDatabase extends Database{
+public class EndUserDatabase{
 
     private List<User> endUsers;
 
-    EndUserDatabase() {
-        endUsers = new ArrayList<User>();
+    public EndUserDatabase() {
+        endUsers = new ArrayList<>();
     }
 
-    List<User> getEndUsers() {
+    public List<User> getEndUsers() {
         return this.endUsers;
     }
 
-    void addEndUser(User endUser) {
+    public void addEndUser(User endUser) {
         this.endUsers.add(endUser);
     }
 

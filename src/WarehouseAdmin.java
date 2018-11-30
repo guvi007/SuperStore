@@ -1,28 +1,29 @@
 public class WarehouseAdmin extends User {
 
-    Warehouse myWarehouse;
+    Building myWarehouse;
     WarehouseDatabase database;
 
-    WarehouseAdmin(String name, String id, String password, Warehouse warehouse, WarehouseDatabase w) {
+    public WarehouseAdmin(String name, String id, String password, Building warehouse, WarehouseDatabase w) {
         super(name, id, password);
         this.myWarehouse = warehouse;
         this.database = w;
     }
 
-    void addProduct(Product product) {
-        this.myWarehouse.addProduct(product);
+    public void addProduct(Product product) {
+//        this.myWarehouse.addProduct(product);
     }
 
-    void deleteProduct(Product product) {
-        this.myWarehouse.deleteProduct(Product);
+    public void deleteProduct(Product product) {
+//        this.myWarehouse.deleteProduct(Product);
     }
 
-    Product optimalWarehouse(String productID, int quantity) {
-        Product X = database.optimalWarehouse(productID, quantity);
-        return X;
+    public Product optimalWarehouse(String productID, int quantity) {
+//        Product X = database.optimalWarehouse(productID, quantity);
+//        return X;
+        return new Product();
     }
 
-    void modifyProduct(String productID, int quantity, int price) {
+    public void modifyProduct(String productID, int quantity, int price) {
         return;
     }
 

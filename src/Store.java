@@ -40,7 +40,7 @@ public class Store implements Building {
 
     @Override
     public boolean stockChecker(Product p) {
-        
+        return true;
     }
 
     public int getK() {

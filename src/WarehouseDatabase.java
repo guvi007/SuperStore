@@ -1,18 +1,27 @@
 import java.util.HashMap;
 
-public class WarehouseDatabase extends Database{
+public class WarehouseDatabase{
 
     private HashMap<String, Building> warehouses;
     private HashMap<String, User> warehouseAdmins;
     private HashMap<String, String> nameToIdWarehouse, nameToIdAdmins;
     private int numWarehouse;
 
-    WarehouseDatabase() {
+    public WarehouseDatabase() {
         warehouses = new HashMap<>();
         warehouseAdmins = new HashMap<>();
         nameToIdAdmins = new HashMap<>();
         nameToIdWarehouse = new HashMap<>();
         numWarehouse = 0;
+    }
+
+    public User searchWarehouseAdmin(String parameter) {
+        if(warehouseAdmins.containsKey(parameter)) {
+            return warehouseAdmins.get(parameter);
+        }
+        else {
+            return null;
+        }
     }
 
 //    void addWarehouse(Warehouse warehouse) {
@@ -30,12 +39,15 @@ public class WarehouseDatabase extends Database{
 //        }
 //    }
 //
-//    Warehouse searchWarehouse(String ID) {
-//        for (Building warehouse : this.warehouses)
-//        {
-//            if (warehouse.getId.equals(ID)) {
-//                return warehouse;
-//            }
+//    Building searchWarehouse(String parameter) {
+//        if(nameToIdStores.containsKey(parameter)) {
+//            parameter = nameToIdStores.get(parameter);
+//        }
+//        if(stores.containsKey(parameter)) {
+//            return stores.get(parameter);
+//        }
+//        else {
+//            return null;
 //        }
 //    }
 

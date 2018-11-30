@@ -1,19 +1,28 @@
 import java.util.HashMap;
 import java.util.List;
 
-public class StoreDatabase extends Database{
+public class StoreDatabase{
 
     private HashMap<String, Building> stores;
     private HashMap<String, User> storeAdmins;
     private HashMap<String, String> nameToIdStores, nameToIdAdmins;
     private int numStores;
 
-    StoreDatabase() {
+    public StoreDatabase() {
         stores = new HashMap<>();
         storeAdmins = new HashMap<>();
         nameToIdAdmins = new HashMap<>();
         nameToIdStores = new HashMap<>();
         numStores = 0;
+    }
+
+    public User searchStoreAdmin(String parameter) {
+        if(storeAdmins.containsKey(parameter)) {
+            return storeAdmins.get(parameter);
+        }
+        else {
+            return null;
+        }
     }
 
     Building searchStore(String parameter) {
