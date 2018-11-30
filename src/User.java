@@ -21,4 +21,8 @@ public abstract class User {
     public String getID() {
         return this.ID;
     }
+
+    public String getName() {
+        return this.Name;
+    }
 }

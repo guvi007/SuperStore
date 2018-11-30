@@ -2,8 +2,9 @@
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -12,7 +13,7 @@
    <children>
       <AnchorPane maxWidth="1.7976931348623157E308" prefHeight="120.0" prefWidth="776.0" style="-fx-background-color: #3196DE;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Text layoutX="226.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME, &lt;superuser&gt;">
+            <Text fx:id="welcome" layoutX="207.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME, &lt;superuser&gt;">
                <font>
                   <Font size="35.0" />
                </font>
@@ -25,29 +26,31 @@
                   <FontAwesomeIcon glyphName="POWER_OFF" size="2em" text="" wrappingWidth="24.0" />
                </graphic>
             </Button>
-            <Button layoutX="14.0" layoutY="39.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="91.0" style="-fx-background-radius: 8PX; -fx-background-color: #FFF;" text="  BACK">
-               <font>
-                  <Font name="Kristen ITC" size="12.0" />
-               </font>
-               <graphic>
-                  <FontAwesomeIcon glyphName="ARROW_LEFT" size="1.3em" text="" />
-               </graphic>
-            </Button>
          </children></AnchorPane>
       <SplitPane dividerPositions="0.5" layoutX="11.0" layoutY="123.0" prefHeight="495.0" prefWidth="802.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <ListView layoutX="14.0" layoutY="56.0" prefHeight="422.0" prefWidth="376.0" />
-                  <Button layoutX="351.0" layoutY="13.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="31.0" />
+                  <Button fx:id="addWarehouse" layoutX="351.0" layoutY="13.0" mnemonicParsing="false" onAction="#AddWarehouse" prefHeight="20.0" prefWidth="31.0" />
                   <FontAwesomeIcon fill="#1cb433" glyphName="PLUS" layoutX="362.0" layoutY="29.0" />
                   <Text layoutX="143.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WAREHOUSES" />
+                  <TableView fx:id="warehouseList" layoutX="11.0" layoutY="56.0" prefHeight="423.0" prefWidth="380.0">
+                    <columns>
+                      <TableColumn fx:id="warehouseId" prefWidth="146.0" text="ID" />
+                      <TableColumn prefWidth="233.0" text="Name" />
+                    </columns>
+                  </TableView>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="477.0" prefWidth="405.0">
                <children>
-                  <ListView layoutX="12.0" layoutY="56.0" prefHeight="423.0" prefWidth="376.0" />
-                  <Button layoutX="350.0" layoutY="13.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="31.0" />
+                  <TableView fx:id="warehouseList1" layoutX="9.0" layoutY="56.0" prefHeight="423.0" prefWidth="380.0">
+                     <columns>
+                        <TableColumn fx:id="warehouseId1" prefWidth="146.0" text="ID" />
+                        <TableColumn prefWidth="233.0" text="Name" />
+                     </columns>
+                  </TableView>
+                  <Button fx:id="addStore" layoutX="350.0" layoutY="13.0" mnemonicParsing="false" onAction="#AddStore" prefHeight="20.0" prefWidth="31.0" />
                   <FontAwesomeIcon fill="#1cb433" glyphName="PLUS" layoutX="361.0" layoutY="29.0" />
                   <Text layoutX="177.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="STORES" wrappingWidth="98.13666534423828" />
                </children>

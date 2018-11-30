@@ -33,7 +33,12 @@ public class Main extends Application {
         return true;
     }
 
-    public static void setSuperUser() {
+    public static User setSuperUser() {
         database.setSuperUser();
+        return database.getSuperUser();
+    }
+
+    public static Database giveDatabase() {
+        return database;
     }
 }

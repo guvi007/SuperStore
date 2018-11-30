@@ -2,22 +2,19 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.text.Text;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class superUserController {
+public class addWarehouseController {
 
     @FXML
-    private Text welcome;
-
+    private TextField nameWarehouse, nameAdmin, loginAdmin, passAdmin, invalid;
 
     @FXML
-    public void initialize() {
-        welcome.setText("WELCOME, " + Main.giveDatabase().getSuperUser().getName());
-
-    }
+    private ChoiceBox<Building> linkWarehouse;
 
     public void signOut() throws IOException {
         Stage primaryStage = Main.primaryStage;
@@ -28,16 +25,21 @@ public class superUserController {
         primaryStage.show();
     }
 
-    public void AddWarehouse() throws IOException{
+    public void back() throws IOException {
         Stage primaryStage = Main.primaryStage;
-        Parent root = FXMLLoader.load(getClass().getResource("./GUI/warehouseAddScreen.fxml"));
-        primaryStage.setTitle("Add Warehouse");
+        Parent root = FXMLLoader.load(getClass().getResource("./GUI/superUser.fxml"));
+        primaryStage.setTitle("Super User");
         primaryStage.resizableProperty().setValue(Boolean.FALSE);
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();
     }
 
-    public void AddStore() throws IOException {
+    public void onAdd() throws IOException {
+        if(nameWarehouse.getText().equals("") || nameAdmin.getText().equals("") || loginAdmin.getText().equals("") || passAdmin.getText().equals("")) {
+            invalid.setText("Please fill all the fields!");
+        }
+        else {
 
+        }
     }
 }

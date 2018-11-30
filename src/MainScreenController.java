@@ -1,8 +1,10 @@
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import java.io.IOException;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+
 
 public class MainScreenController {
 
@@ -14,6 +16,7 @@ public class MainScreenController {
         primaryStage.resizableProperty().setValue(Boolean.FALSE);
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();
+
     }
 
     public void warehouseAdminScreen() throws IOException {
