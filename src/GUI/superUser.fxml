@@ -33,12 +33,12 @@
                   <Button fx:id="addWarehouse" layoutX="351.0" layoutY="13.0" mnemonicParsing="false" onAction="#AddWarehouse" prefHeight="20.0" prefWidth="31.0" />
                   <FontAwesomeIcon fill="#1cb433" glyphName="PLUS" layoutX="362.0" layoutY="29.0" />
                   <Text layoutX="143.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WAREHOUSES" />
-                  <ListView fx:id="warehouseList" layoutX="13.0" layoutY="49.0" prefHeight="423.0" prefWidth="371.0" />
+                  <ListView fx:id="warehouseList" layoutX="13.0" layoutY="49.0" onMouseClicked="#seeWarehouseInfo" prefHeight="423.0" prefWidth="371.0" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="477.0" prefWidth="405.0">
                <children>
-                  <ListView fx:id="storeList" layoutX="13.0" layoutY="49.0" prefHeight="423.0" prefWidth="371.0" />
+                  <ListView fx:id="storeList" layoutX="13.0" layoutY="49.0" onMouseClicked="#seeStoreInfo" prefHeight="423.0" prefWidth="371.0" />
                   <Button fx:id="addStore" layoutX="350.0" layoutY="13.0" mnemonicParsing="false" onAction="#AddStore" prefHeight="20.0" prefWidth="31.0" />
                   <FontAwesomeIcon fill="#1cb433" glyphName="PLUS" layoutX="361.0" layoutY="29.0" />
                   <Text layoutX="177.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="STORES" wrappingWidth="98.13666534423828" />

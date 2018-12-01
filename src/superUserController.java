@@ -64,4 +64,36 @@ public class superUserController {
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();
     }
+
+    public void seeWarehouseInfo() throws IOException{
+        Warehouse w = warehouseList.getSelectionModel().getSelectedItem();
+        if(w != null) {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("./GUI/warehouseScreenInfo.fxml"));
+            Parent root = loader.load();
+            warehouseScreenInfoController wsi = loader.getController();
+            wsi.setValues(w);
+            Stage primaryStage = Main.primaryStage;
+            primaryStage.setTitle("Warehouse Info Screen");
+            primaryStage.resizableProperty().setValue(Boolean.FALSE);
+            primaryStage.setScene(new Scene(root, 800, 600));
+            primaryStage.show();
+        }
+    }
+
+    public void seeStoreInfo() throws IOException{
+        Store w = storeList.getSelectionModel().getSelectedItem();
+        if(w != null) {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("./GUI/storeScreenInfo.fxml"));
+            Parent root = loader.load();
+            storeScreenInfoController  wsi = loader.getController();
+            wsi.setValues(w);
+            Stage primaryStage = Main.primaryStage;
+            primaryStage.setTitle("Store Info Screen");
+            primaryStage.resizableProperty().setValue(Boolean.FALSE);
+            primaryStage.setScene(new Scene(root, 800, 600));
+            primaryStage.show();
+        }
+    }
 }

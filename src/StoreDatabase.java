@@ -44,10 +44,10 @@ public class StoreDatabase implements Serializable {
         return true;
     }
 
-    void addStore(String storeName, Building Warehouse, String adminName, String adminLogin, String adminPassword) {
+    Store addStore(String storeName, Building warehouse, String adminName, String adminLogin, String adminPassword) {
         String storeId = "S-" + numStores;
 
-        Building store = new Store(storeName,storeId , Warehouse);
+        Building store = new Store(storeName,storeId , warehouse);
         User storeAdmin = new StoreAdmin(adminName, adminLogin, adminPassword, store);
         ((Store) store).setMyAdmin(storeAdmin);
         ++numStores;
@@ -57,6 +57,8 @@ public class StoreDatabase implements Serializable {
 
         storeAdmins.put(adminLogin, storeAdmin);
         nameToIdAdmins.put(adminName, adminLogin);
+
+        return (Store)store;
     }
 
     public ArrayList<String> storeList() {
@@ -87,5 +89,17 @@ public class StoreDatabase implements Serializable {
 
     public int getNumStores() {
         return this.numStores;
+    }
+
+    public boolean isNamePresent(String s) {
+        if(nameToIdStores.containsKey(s))
+            return true;
+        return false;
+    }
+
+    public boolean isAdminLoginPresent(String s) {
+        if(storeAdmins.containsKey(s))
+            return true;
+        return false;
     }
 }

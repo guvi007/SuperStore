@@ -69,7 +69,7 @@
                         <Font size="18.0" />
                     </font>
                 </Text>
-            <ChoiceBox layoutX="488.0" layoutY="140.0" prefHeight="33.0" prefWidth="165.0" style="-fx-background-color: #fff; -fx-border-color: #CCC;" />
+            <ChoiceBox fx:id="cb" layoutX="488.0" layoutY="140.0" prefHeight="33.0" prefWidth="165.0" style="-fx-background-color: #fff; -fx-border-color: #CCC;" />
             <Line endX="339.0" layoutX="377.0" layoutY="208.0" startX="-100.0" stroke="#dad5d5" />
             <Line endX="339.0" layoutX="377.0" layoutY="250.0" startX="-100.0" stroke="#dad5d5" />
             <Text fill="#939393" layoutX="303.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ADMIN DETAILS" wrappingWidth="165.00000405311584">
@@ -102,7 +102,7 @@
             </Text>
             <Line endX="339.0" layoutX="377.0" layoutY="19.0" startX="-100.0" stroke="#dad5d5" />
             <Line endX="339.0" layoutX="377.0" layoutY="61.0" startX="-100.0" stroke="#dad5d5" />
-            <TextField fx:id="invalid" disable="true" layoutX="82.0" layoutY="369.0" prefHeight="25.0" prefWidth="165.0" style="-fx-background-color: white;">
+            <TextField fx:id="invalid" alignment="CENTER" editable="false" layoutX="14.0" layoutY="348.0" maxWidth="1.7976931348623157E308" prefHeight="44.0" prefWidth="300.0" style="-fx-background-color: white;">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>

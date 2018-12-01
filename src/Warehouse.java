@@ -7,7 +7,7 @@ public class Warehouse implements Building, Serializable {
     private int d,h,k;
     private User myAdmin;
     private final String id, name;
-    private List<Store> stores = new ArrayList<Store>();
+    private ArrayList<Store> stores = new ArrayList<Store>();
     private Catalogue catalogue;
 
     Warehouse(String name, String ID) {
@@ -17,6 +17,14 @@ public class Warehouse implements Building, Serializable {
         setH(1);
         setD(1);
         this.catalogue = new Catalogue();
+    }
+
+    public void addLinkedStore(Store s) {
+        stores.add(s);
+    }
+
+    public ArrayList<Store> returnLinkedStore() {
+        return this.stores;
     }
 
     @Override

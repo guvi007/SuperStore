@@ -26,7 +26,7 @@ public class WarehouseDatabase implements Serializable {
         }
     }
 
-    void addWarehouse(String WarehouseName, String adminName, String adminLogin, String adminPassword) {
+    public void addWarehouse(String WarehouseName, String adminName, String adminLogin, String adminPassword) {
         String WarehouseId = "W-" + numWarehouse;
 
         Building warehouse = new Warehouse(WarehouseName,WarehouseId);
@@ -69,6 +69,18 @@ public class WarehouseDatabase implements Serializable {
 
     public int getNumWarehouse() {
         return this.numWarehouse;
+    }
+
+    public boolean isNamePresent(String s) {
+        if(nameToIdWarehouse.containsKey(s))
+            return true;
+        return false;
+    }
+
+    public boolean isAdminLoginPresent(String s) {
+        if(warehouseAdmins.containsKey(s))
+            return true;
+        return false;
     }
 
 }

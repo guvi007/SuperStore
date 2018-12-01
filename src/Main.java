@@ -12,7 +12,6 @@ public class Main extends Application implements Serializable {
     public static int temp;
     private static Database database;
 
-
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("./GUI/MainScreen.fxml"));

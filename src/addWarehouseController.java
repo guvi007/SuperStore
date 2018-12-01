@@ -43,8 +43,16 @@ public class addWarehouseController {
             invalid.setText("Please fill all the fields!");
         }
         else {
-            Main.giveDatabase().getWarehouseDatabase().addWarehouse(nameWarehouse.getText(), nameAdmin.getText(), loginAdmin.getText(), passAdmin.getText());
-            back();
+
+            if(Main.giveDatabase().getWarehouseDatabase().isNamePresent(nameWarehouse.getText()))
+                invalid.setText("Warehouse with same name already Exists!");
+            else if(Main.giveDatabase().getWarehouseDatabase().isAdminLoginPresent(loginAdmin.getText()))
+                invalid.setText("Admin Login already Exists!");
+            else {
+                Main.giveDatabase().getWarehouseDatabase().addWarehouse(nameWarehouse.getText(), nameAdmin.getText(), loginAdmin.getText(), passAdmin.getText());
+                back();
+            }
+
         }
     }
 }
