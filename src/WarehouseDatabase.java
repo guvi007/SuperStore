@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class WarehouseDatabase{
@@ -22,6 +23,37 @@ public class WarehouseDatabase{
         else {
             return null;
         }
+    }
+
+    void addWarehouse(String WarehouseName, String adminName, String adminLogin, String adminPassword) {
+        String WarehouseId = "W" + numWarehouse;
+
+        Building warehouse = new Warehouse(WarehouseName,WarehouseId);
+        User warehouseAdmin = new WarehouseAdmin(adminName, adminLogin, adminPassword, warehouse, this);
+        ((Warehouse) warehouse).setMyAdmin(warehouseAdmin);
+        ++numWarehouse;
+
+        warehouses.put(WarehouseId, warehouse);
+        nameToIdWarehouse.put(WarehouseName, WarehouseId);
+
+        warehouseAdmins.put(adminLogin, warehouseAdmin);
+        nameToIdAdmins.put(adminName, adminLogin);
+    }
+
+    public ArrayList<String> warehouseList() {
+        ArrayList <String> warehouseList = (ArrayList<String>) this.warehouses.keySet();
+        return warehouseList;
+    }
+
+    Warehouse returnWarehouse(String name) {
+        return (Warehouse) warehouses.get(name);
+    }
+
+    ArrayList<Warehouse> returnList() {
+        ArrayList<Warehouse> x = new ArrayList<>();
+        for (String a : this.warehouses.keySet())
+            x.add((Warehouse) this.warehouses.get(a));
+        return x;
     }
 
 //    void addWarehouse(Warehouse warehouse) {

@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class Store implements Building {
 
     private int d,h,k;
@@ -9,9 +12,9 @@ public class Store implements Building {
     Store(String name, String ID, Building w) {
         this.name = name;
         this.ID = ID;
-        setK(0);
+        setK(1);
         setH(1);
-        setD(0);
+        setD(1);
         setLinkedWarehouse(w);
         this.catalogue = new Catalogue();
     }
@@ -78,4 +81,29 @@ public class Store implements Building {
     public void setMyAdmin(User myAdmin) {
         this.myAdmin = myAdmin;
     }
+
+    public User getMyAdmin() {
+        return myAdmin;
+    }
+
+    ArrayList<Product> returnProductList(String name) {
+        ArrayList<Product> ProductList = new ArrayList<Product>();
+        for (Product a : this.catalogue.getProductList()) {
+            if (a.getName().toLowerCase().contains(name.toLowerCase()))
+                ProductList.add(a);
+        }
+        return ProductList;
+    }
+
+    void orderProduct(Product p) {
+        int quantity = (int)Math.sqrt((2.0*this.d*this.k)/(this.h));
+        ((Warehouse)this.linkedWarehouse).orderProduct(p,quantity);
+    }
+
+    void sellProduct(Product p, int quantity) {
+        p.setQuantity(p.getQuantity()-quantity);
+        if (p.getQuantity() == 0)
+            orderProduct(p);
+    }
+
 }

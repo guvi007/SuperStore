@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Database {
     private User superuser;
     private WarehouseDatabase warehouseDatabase;
@@ -48,5 +50,13 @@ public class Database {
 
     public void setSuperUser() {
         this.superuser = new SuperUser(this);
+    }
+
+    ArrayList<String> warehouseList() {
+        return this.warehouseDatabase.warehouseList();
+    }
+
+    ArrayList<String> storeList() {
+        return this.storeDatabase.storeList();
     }
 }

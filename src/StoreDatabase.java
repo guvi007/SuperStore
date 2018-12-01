@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -56,5 +57,21 @@ public class StoreDatabase{
 
         storeAdmins.put(adminLogin, storeAdmin);
         nameToIdAdmins.put(adminName, adminLogin);
+    }
+
+    public ArrayList<String> storeList() {
+        ArrayList <String> storeList = (ArrayList<String>) this.stores.keySet();
+        return storeList;
+    }
+
+    Store returnStore(String name) {
+        return (Store) stores.get(name);
+    }
+
+    void deleteStore(String name) {
+        String admin = ((Store)stores.get(name)).getMyAdmin().getName();
+        this.storeAdmins.remove(admin);
+        this.nameToIdAdmins.remove(name); this.nameToIdStores.remove(name);
+        this.stores.remove(name);
     }
 }
