@@ -1,6 +1,6 @@
 import java.io.Serializable;
 
-public class Product implements Serializable {
+public class Product implements Serializable, Comparable<Product> {
 
     private String name, ID;
     private int price, quantity;
@@ -43,5 +43,10 @@ public class Product implements Serializable {
         if (o.getName().equals(((Product) obj).name) && o.getID().equals(((Product) obj).ID))
             return true;
         return false;
+    }
+
+    @Override
+    public int compareTo(Product o) {
+        return this.name.compareTo(o.getName());
     }
 }
