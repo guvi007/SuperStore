@@ -48,6 +48,10 @@ public class Warehouse implements Building {
         return true;
     }
 
+    User getMyAdmin() {
+        return this.myAdmin;
+    }
+
     public int getK() {
         return k;
     }

@@ -51,6 +51,7 @@ public class WarehouseAdmin extends User {
         return Math.min(currMax, quantity);
     }
 
+
 //    public Product optimalWarehouse(String productID, int quantity) {
 ////        Product X = database.optimalWarehouse(productID, quantity);
 ////        return X;

@@ -49,6 +49,15 @@ public class WarehouseDatabase{
         return (Warehouse) warehouses.get(name);
     }
 
+    void deleteWarehouse(String name) {
+        String admin = ((Warehouse)warehouses.get(name)).getMyAdmin().getName();
+        String adminLogin = nameToIdAdmins.get(admin);
+        this.warehouseAdmins.remove(adminLogin);
+        this.nameToIdAdmins.remove(admin);
+        this.nameToIdWarehouse.remove(name);
+        this.warehouses.remove(name);
+    }
+
     ArrayList<Warehouse> returnList() {
         ArrayList<Warehouse> x = new ArrayList<>();
         for (String a : this.warehouses.keySet())

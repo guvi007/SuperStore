@@ -70,8 +70,10 @@ public class StoreDatabase{
 
     void deleteStore(String name) {
         String admin = ((Store)stores.get(name)).getMyAdmin().getName();
-        this.storeAdmins.remove(admin);
-        this.nameToIdAdmins.remove(name); this.nameToIdStores.remove(name);
+        String adminLogin = nameToIdAdmins.get(admin);
+        this.storeAdmins.remove(adminLogin);
+        this.nameToIdAdmins.remove(admin);
+        this.nameToIdStores.remove(name);
         this.stores.remove(name);
     }
 }
