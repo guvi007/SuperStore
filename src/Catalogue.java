@@ -11,12 +11,15 @@ public class Catalogue implements Serializable {
     Catalogue() {
         this.products = new HashMap<String, ArrayList<Object>>();
         this.productList = new ArrayList<Product>();
+        this.products.put("root", new ArrayList<Object>());
     }
 
     void addStuff(String Category, Object o) {
         this.products.get(Category).add(o);
         if (o instanceof Product)
             this.productList.add((Product)o);
+        else
+            this.products.put((String)o, new ArrayList<Object>());
     }
 
     void deleteStuff(String parentCategory, Object o) {

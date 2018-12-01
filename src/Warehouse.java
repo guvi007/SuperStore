@@ -111,4 +111,8 @@ public class Warehouse implements Building, Serializable {
     public String getName() {
         return name;
     }
+
+    ArrayList<Object> returnResults(String node) {
+        return this.catalogue.getProducts().get(node);
+    }
 }

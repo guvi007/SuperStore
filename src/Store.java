@@ -114,4 +114,8 @@ public class Store implements Building, Serializable {
     public String getID() {
         return ID;
     }
+
+    ArrayList<Object> returnResults(String node) {
+        return this.catalogue.getProducts().get(node);
+    }
 }
