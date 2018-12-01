@@ -68,12 +68,13 @@ public class StoreDatabase{
         return (Store) stores.get(name);
     }
 
-    void deleteStore(String name) {
-        String admin = ((Store)stores.get(name)).getMyAdmin().getName();
-        String adminLogin = nameToIdAdmins.get(admin);
+    void deleteStore(String storeID) {
+        String storeAdminName = ((Store)stores.get(storeID)).getMyAdmin().getName();
+        String adminLogin = nameToIdAdmins.get(storeAdminName);
+        String storeName = ((Store)stores.get(storeID)).getName();
         this.storeAdmins.remove(adminLogin);
-        this.nameToIdAdmins.remove(admin);
-        this.nameToIdStores.remove(name);
-        this.stores.remove(name);
+        this.nameToIdAdmins.remove(storeAdminName);
+        this.nameToIdStores.remove(storeName);
+        this.stores.remove(storeID);
     }
 }

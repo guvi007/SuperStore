@@ -106,4 +106,11 @@ public class Store implements Building {
             orderProduct(p);
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getID() {
+        return ID;
+    }
 }

@@ -49,13 +49,14 @@ public class WarehouseDatabase{
         return (Warehouse) warehouses.get(name);
     }
 
-    void deleteWarehouse(String name) {
-        String admin = ((Warehouse)warehouses.get(name)).getMyAdmin().getName();
-        String adminLogin = nameToIdAdmins.get(admin);
+    void deleteWarehouse(String warehouseID) {
+        String warehouseAdminName = ((Warehouse)warehouses.get(warehouseID)).getMyAdmin().getName();
+        String adminLogin = nameToIdAdmins.get(warehouseAdminName);
+        String warehouseName = ((Warehouse)warehouses.get(warehouseID)).getName();
         this.warehouseAdmins.remove(adminLogin);
-        this.nameToIdAdmins.remove(admin);
-        this.nameToIdWarehouse.remove(name);
-        this.warehouses.remove(name);
+        this.nameToIdAdmins.remove(warehouseAdminName);
+        this.nameToIdWarehouse.remove(warehouseName);
+        this.warehouses.remove(warehouseID);
     }
 
     ArrayList<Warehouse> returnList() {
