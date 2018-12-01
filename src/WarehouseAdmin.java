@@ -1,5 +1,4 @@
 import java.io.Serializable;
-import java.util.ArrayList;
 
 public class WarehouseAdmin extends User implements Serializable {
 
@@ -10,6 +9,10 @@ public class WarehouseAdmin extends User implements Serializable {
         super(name, id, password);
         this.myWarehouse = warehouse;
         this.database = w;
+    }
+
+    public Warehouse returnMyWarehouse() {
+        return (Warehouse)this.myWarehouse;
     }
 
     void addStuff(String node, Object o) {
@@ -51,13 +54,5 @@ public class WarehouseAdmin extends User implements Serializable {
         }
         return Math.min(currMax, quantity);
     }
-
-
-//    public Product optimalWarehouse(String productID, int quantity) {
-////        Product X = database.optimalWarehouse(productID, quantity);
-////        return X;
-//        return new Product(name, id, price);
-//    }
-
 
 }

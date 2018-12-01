@@ -36,7 +36,7 @@ public class login {
             return null;
         }
         else {
-            if(password != temp.getPassword())
+            if(!(password.equals(temp.getPassword())))
                 return null;
             else
                 return temp;

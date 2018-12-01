@@ -8,11 +8,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="577.0" prefWidth="776.0" style="-fx-background-color: #DDDDDD;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="577.0" prefWidth="776.0" style="-fx-background-color: #DDDDDD;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="warehouseAdminScreenController">
     <children>
         <AnchorPane layoutX="87.0" layoutY="-1.0" maxWidth="1.7976931348623157E308" prefHeight="178.0" prefWidth="654.0" style="-fx-background-color: #3196DE;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
             <children>
-                <Button alignment="BOTTOM_RIGHT" contentDisplay="TOP" layoutX="673.0" layoutY="16.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="77.0" style="-fx-background-color: white; -fx-background-radius: 8px;" text=" Sign Out" underline="true">
+                <Button alignment="BOTTOM_RIGHT" contentDisplay="TOP" layoutX="673.0" layoutY="16.0" mnemonicParsing="false" onAction="#signOut" prefHeight="47.0" prefWidth="77.0" style="-fx-background-color: white; -fx-background-radius: 8px;" text=" Sign Out" underline="true">
                     <font>
                         <Font name="Kristen ITC" size="12.0" />
                     </font>
@@ -20,15 +20,7 @@
                         <FontAwesomeIcon glyphName="POWER_OFF" size="1.7em" />
                     </graphic>
                 </Button>
-                <Button layoutX="22.0" layoutY="26.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="91.0" style="-fx-background-radius: 8PX; -fx-background-color: #FFF;" text="  BACK">
-                    <font>
-                        <Font name="Kristen ITC" size="12.0" />
-                    </font>
-                    <graphic>
-                        <FontAwesomeIcon glyphName="ARROW_LEFT" size="1.3em" text="" />
-                    </graphic>
-                </Button>
-                <Text fill="WHITE" layoutX="189.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME, &lt;warehouseAdmin&gt;">
+                <Text fx:id="welcome" fill="WHITE" layoutX="189.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME, &lt;warehouseAdmin&gt;">
                     <font>
                         <Font size="28.0" />
                     </font>
@@ -46,7 +38,7 @@
                         <Font size="22.0" />
                     </font>
                 </Text>
-                <Text layoutX="326.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;username&gt;">
+                <Text fx:id="name" layoutX="326.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;username&gt;">
                     <font>
                         <Font size="22.0" />
                     </font>
@@ -56,7 +48,7 @@
                         <Font name="FontAwesome Regular" size="25.0" />
                     </font>
                 </Text>
-                <Button layoutX="243.0" layoutY="346.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="173.0" style="-fx-background-radius: 8PX;" text="  My Warehouse" textAlignment="CENTER">
+                <Button layoutX="243.0" layoutY="346.0" mnemonicParsing="false" onAction="#myWarehouse" prefHeight="37.0" prefWidth="173.0" style="-fx-background-radius: 8PX;" text="  My Warehouse" textAlignment="CENTER">
                     <font>
                         <Font size="16.0" />
                     </font>
@@ -68,7 +60,7 @@
                         </ImageView>
                     </graphic>
                 </Button>
-                <Text layoutX="329.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;id&gt;">
+                <Text fx:id="id" layoutX="325.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;id&gt;">
                     <font>
                         <Font size="22.0" />
                     </font>
@@ -78,7 +70,7 @@
                         <Font size="22.0" />
                     </font>
                 </Text>
-            <Button layoutX="40.0" layoutY="346.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="166.0" style="-fx-background-radius: 8PX;" text=" All Warehouses" textAlignment="CENTER">
+            <Button layoutX="40.0" layoutY="346.0" mnemonicParsing="false" onAction="#allWarehouse" prefHeight="37.0" prefWidth="166.0" style="-fx-background-radius: 8PX;" text=" All Warehouses" textAlignment="CENTER">
                <font>
                   <Font size="16.0" />
                </font>

@@ -48,17 +48,27 @@ public class loginPageController {
             }
             else {
                 Parent root = null;
-                if(Main.temp == 2) {
-                    root = FXMLLoader.load(getClass().getResource("./GUI/warehouseAdminScreen.fxml"));
+                if(Main.temp == 1) {
+                    FXMLLoader loader = new FXMLLoader();
+                    loader.setLocation(getClass().getResource("./GUI/warehouseAdminScreen.fxml"));
+                    root = loader.load();
+                    warehouseAdminScreenController wa = loader.getController();
+                    WarehouseAdmin wa1 = (WarehouseAdmin)temp;
+                    wa.setValues(wa1);
                     primaryStage.setTitle("Warehouse Admin");
                 }
                 else if(Main.temp == 3) {
                     root = FXMLLoader.load(getClass().getResource("./GUI/superUser.fxml"));
                     primaryStage.setTitle("Super User");
                 }
-                else if(Main.temp == 1) {
-                    root = FXMLLoader.load(getClass().getResource("./GUI/storeAdminScreen.fxml"));
-                    primaryStage.setTitle("Super User");
+                else if(Main.temp == 2) {
+                    FXMLLoader loader = new FXMLLoader();
+                    loader.setLocation(getClass().getResource("./GUI/storeAdminScreen.fxml"));
+                    root = loader.load();
+                    storeAdminScreenController sa = loader.getController();
+                    StoreAdmin sa1 = (StoreAdmin) temp;
+                    sa.setValues(sa1);
+                    primaryStage.setTitle("Store Admin");
                 }
                 primaryStage.resizableProperty().setValue(Boolean.FALSE);
                 primaryStage.setScene(new Scene(root, 800, 600));

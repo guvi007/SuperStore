@@ -2,7 +2,7 @@ import java.io.Serializable;
 
 public class StoreAdmin extends User implements Serializable {
 
-    Building myStore;
+    private Building myStore;
 
     StoreAdmin(String name, String ID, String password, Building s) {
         super(name, ID, password);
@@ -33,5 +33,9 @@ public class StoreAdmin extends User implements Serializable {
     void changeH(int h) {
         if (h > 0)
             ((Store) this.myStore).setH(h);
+    }
+
+    public Store myStore() {
+        return (Store)this.myStore;
     }
 }
