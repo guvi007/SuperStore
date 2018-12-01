@@ -1,4 +1,6 @@
-public class SuperUser extends User {
+import java.io.Serializable;
+
+public class SuperUser extends User implements Serializable {
 
     private StoreDatabase storeDatabase;
     private WarehouseDatabase wareHouseDatabase;

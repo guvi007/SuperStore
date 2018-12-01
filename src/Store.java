@@ -1,7 +1,8 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Store implements Building {
+public class Store implements Building, Serializable {
 
     private int d,h,k;
     private final String name, ID;

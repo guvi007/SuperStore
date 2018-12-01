@@ -1,7 +1,8 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Warehouse implements Building {
+public class Warehouse implements Building, Serializable {
 
     private int d,h,k;
     private User myAdmin;

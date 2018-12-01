@@ -1,7 +1,8 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class WarehouseDatabase{
+public class WarehouseDatabase implements Serializable {
 
     private HashMap<String, Building> warehouses;
     private HashMap<String, User> warehouseAdmins;

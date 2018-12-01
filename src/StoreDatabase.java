@@ -1,8 +1,9 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class StoreDatabase{
+public class StoreDatabase implements Serializable {
 
     private HashMap<String, Building> stores;
     private HashMap<String, User> storeAdmins;

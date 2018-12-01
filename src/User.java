@@ -1,4 +1,6 @@
-public abstract class User {
+import java.io.Serializable;
+
+public abstract class User implements Serializable {
 
     private final String Name, ID, password;
 

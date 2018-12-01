@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class WarehouseAdmin extends User {
+public class WarehouseAdmin extends User implements Serializable {
 
     private Building myWarehouse;
     private WarehouseDatabase database;

@@ -1,4 +1,6 @@
-public class StoreAdmin extends User {
+import java.io.Serializable;
+
+public class StoreAdmin extends User implements Serializable {
 
     Building myStore;
 

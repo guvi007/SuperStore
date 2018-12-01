@@ -4,7 +4,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Main extends Application {
+import java.io.*;
+
+public class Main extends Application implements Serializable {
     public static Stage primaryStage;
     public static login log;
     public static int temp;
@@ -40,5 +42,28 @@ public class Main extends Application {
 
     public static Database giveDatabase() {
         return database;
+    }
+
+    public static void serialize() throws IOException {
+        Database d = database;
+        ObjectOutputStream out = null;
+        try {
+            out = new ObjectOutputStream(new FileOutputStream("Database.txt"));
+            out.writeObject(d);
+        }
+        finally {
+            out.close();
+        }
+    }
+
+    public static void deserialize() throws IOException, ClassNotFoundException {
+        ObjectInputStream in = null;
+        try {
+            in = new ObjectInputStream(new FileInputStream("Database.txt"));
+            database = (Database) in.readObject();
+        }
+        finally {
+            in.close();
+        }
     }
 }

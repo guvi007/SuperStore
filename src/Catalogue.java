@@ -1,8 +1,9 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class Catalogue {
+public class Catalogue implements Serializable {
 
     private HashMap<String, ArrayList<Object>> products;
     private ArrayList<Product> productList;

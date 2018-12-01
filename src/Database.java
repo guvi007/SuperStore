@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Database {
+public class Database implements Serializable {
     private User superuser;
     private WarehouseDatabase warehouseDatabase;
     private StoreDatabase storeDatabase;
