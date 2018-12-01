@@ -114,4 +114,9 @@ public class Store implements Building, Serializable {
     public String getID() {
         return ID;
     }
+
+    @Override
+    public String toString() {
+        return this.ID + " : " + this.getName().toUpperCase();
+    }
 }

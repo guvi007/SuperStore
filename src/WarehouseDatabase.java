@@ -27,7 +27,7 @@ public class WarehouseDatabase implements Serializable {
     }
 
     void addWarehouse(String WarehouseName, String adminName, String adminLogin, String adminPassword) {
-        String WarehouseId = "W" + numWarehouse;
+        String WarehouseId = "W-" + numWarehouse;
 
         Building warehouse = new Warehouse(WarehouseName,WarehouseId);
         User warehouseAdmin = new WarehouseAdmin(adminName, adminLogin, adminPassword, warehouse, this);
@@ -46,11 +46,11 @@ public class WarehouseDatabase implements Serializable {
         return warehouseList;
     }
 
-    Warehouse returnWarehouse(String name) {
-        return (Warehouse) warehouses.get(name);
+    Warehouse returnWarehouse(String warehouseID) {
+        return (Warehouse) warehouses.get(warehouseID);
     }
 
-    void deleteWarehouse(String warehouseID) {
+    public void deleteWarehouse(String warehouseID) {
         String warehouseAdminName = ((Warehouse)warehouses.get(warehouseID)).getMyAdmin().getName();
         String adminLogin = nameToIdAdmins.get(warehouseAdminName);
         String warehouseName = ((Warehouse)warehouses.get(warehouseID)).getName();
@@ -60,38 +60,15 @@ public class WarehouseDatabase implements Serializable {
         this.warehouses.remove(warehouseID);
     }
 
-    ArrayList<Warehouse> returnList() {
+    public ArrayList<Warehouse> returnList() {
         ArrayList<Warehouse> x = new ArrayList<>();
         for (String a : this.warehouses.keySet())
             x.add((Warehouse) this.warehouses.get(a));
         return x;
     }
 
-//    void addWarehouse(Warehouse warehouse) {
-//
-//    }
-//
-//    List<Building> getWarehouseList() {
-//
-//    }
-//
-//    Warehouse optimalWarehouse(String productID, int quantity) {
-//        for (Building warehouse : this.warehouses) {
-//            warehouse = (Warehouse) warehouse;
-//            return (Warehouse) warehouse;
-//        }
-//    }
-//
-//    Building searchWarehouse(String parameter) {
-//        if(nameToIdStores.containsKey(parameter)) {
-//            parameter = nameToIdStores.get(parameter);
-//        }
-//        if(stores.containsKey(parameter)) {
-//            return stores.get(parameter);
-//        }
-//        else {
-//            return null;
-//        }
-//    }
+    public int getNumWarehouse() {
+        return this.numWarehouse;
+    }
 
 }

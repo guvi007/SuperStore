@@ -1,7 +1,6 @@
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 public class StoreDatabase implements Serializable {
 
@@ -46,7 +45,7 @@ public class StoreDatabase implements Serializable {
     }
 
     void addStore(String storeName, Building Warehouse, String adminName, String adminLogin, String adminPassword) {
-        String storeId = "S" + numStores;
+        String storeId = "S-" + numStores;
 
         Building store = new Store(storeName,storeId , Warehouse);
         User storeAdmin = new StoreAdmin(adminName, adminLogin, adminPassword, store);
@@ -77,5 +76,16 @@ public class StoreDatabase implements Serializable {
         this.nameToIdAdmins.remove(storeAdminName);
         this.nameToIdStores.remove(storeName);
         this.stores.remove(storeID);
+    }
+
+    public ArrayList<Store> returnList() {
+        ArrayList<Store> x = new ArrayList<>();
+        for (String a : this.stores.keySet())
+            x.add((Store) this.stores.get(a));
+        return x;
+    }
+
+    public int getNumStores() {
+        return this.numStores;
     }
 }

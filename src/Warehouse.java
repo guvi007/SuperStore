@@ -19,7 +19,6 @@ public class Warehouse implements Building, Serializable {
         this.catalogue = new Catalogue();
     }
 
-
     @Override
     public void addStuff(String Category, Object stuff) {
 
@@ -110,5 +109,10 @@ public class Warehouse implements Building, Serializable {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public String toString() {
+        return this.id + " : " + this.getName().toUpperCase();
     }
 }

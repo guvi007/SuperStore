@@ -8,16 +8,16 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class addWarehouseController {
+public class addStoreController {
 
     @FXML
-    private TextField nameWarehouse, nameAdmin, loginAdmin, passAdmin, invalid;
+    private TextField nameStore, nameAdmin, loginAdmin, passAdmin, invalid;
 
     @FXML
     private Text ID;
 
     public void initialize() {
-        ID.setText("W-" + Main.giveDatabase().getWarehouseDatabase().getNumWarehouse());
+        ID.setText("S-" + Main.giveDatabase().getStoreDatabase().getNumStores());
     }
 
     public void signOut() throws IOException {
@@ -39,11 +39,11 @@ public class addWarehouseController {
     }
 
     public void onAdd() throws IOException {
-        if(nameWarehouse.getText().equals("") || nameAdmin.getText().equals("") || loginAdmin.getText().equals("") || passAdmin.getText().equals("")) {
+        if(nameStore.getText().equals("") || nameAdmin.getText().equals("") || loginAdmin.getText().equals("") || passAdmin.getText().equals("")) {
             invalid.setText("Please fill all the fields!");
         }
         else {
-            Main.giveDatabase().getWarehouseDatabase().addWarehouse(nameWarehouse.getText(), nameAdmin.getText(), loginAdmin.getText(), passAdmin.getText());
+            Main.giveDatabase().getStoreDatabase().addStore(nameStore.getText(), new Warehouse("","") , nameAdmin.getText(), loginAdmin.getText(), passAdmin.getText());
             back();
         }
     }
