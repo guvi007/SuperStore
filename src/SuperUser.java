@@ -1,3 +1,7 @@
+/**
+ * This class is for superuser
+ * @author Apoorv Singh, Gaurav Aggarwal
+ */
 import java.io.Serializable;
 
 public class SuperUser extends User implements Serializable {
@@ -10,6 +14,10 @@ public class SuperUser extends User implements Serializable {
 
     public SuperUser() {}
 
+    /**
+     * Sets up inital values.
+     * @param d Database
+     */
     public SuperUser(Database d) {
         super("Apoorv","SU0", "SU0");
         this.storeDatabase = d.getStoreDatabase();

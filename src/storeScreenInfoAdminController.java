@@ -1,3 +1,7 @@
+/**
+ * This class is the controller for display store info for admin
+ * @author Apoorv Singh, Gaurav Aggarwal
+ */
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -17,6 +21,11 @@ public class storeScreenInfoAdminController {
     @FXML
     private TextField d,h,k;
 
+    /**
+     *
+     * sets up the values from store object
+     * @param store The store Object
+     */
     public void setValues(Store store) {
         this.store = store;
         name.setText(store.getName());
@@ -30,12 +39,19 @@ public class storeScreenInfoAdminController {
         k.setText(Integer.toString(store.getK()));
     }
 
+    /**
+     * Change values of d,k,h if changed
+     */
     public void changeValues() {
         store.setD(Integer.parseInt(d.getText()));
         store.setH(Integer.parseInt(h.getText()));
         store.setK(Integer.parseInt(k.getText()));
     }
 
+    /**
+     * return to the previous screen
+     * @throws IOException Given by the load function
+     */
     public void back() throws IOException {
         changeValues();
 
@@ -51,6 +67,10 @@ public class storeScreenInfoAdminController {
         primaryStage.show();
     }
 
+    /**
+     * Function for signing out the user, returns the user to the main screen
+     * @throws IOException Thrown by load function
+     */
     public void signOut() throws IOException {
         changeValues();
         Stage primaryStage = Main.primaryStage;
@@ -61,6 +81,10 @@ public class storeScreenInfoAdminController {
         primaryStage.show();
     }
 
+    /**
+     * Go to the catgory Screen to display all the categories present in the store.
+     * @throws IOException Given by the load
+     */
     public void openCategory() throws IOException {
         Stage primaryStage = Main.primaryStage;
         FXMLLoader loader = new FXMLLoader();

@@ -1,3 +1,7 @@
+/**
+ * This class is the controller for working of superUser screen
+ * @author Apoorv Singh, Gaurav Aggarwal
+ */
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -38,6 +42,10 @@ public class superUserController {
         }
     }
 
+    /**
+     * Go to the catgory Screen to display all the categories present in the store.
+     * @throws IOException Given by the load
+     */
     public void signOut() throws IOException {
         Stage primaryStage = Main.primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("./GUI/MainScreen.fxml"));
@@ -47,6 +55,10 @@ public class superUserController {
         primaryStage.show();
     }
 
+    /**
+     * Adds Warehouse to the Database
+     * @throws IOException
+     */
     public void AddWarehouse() throws IOException{
         Stage primaryStage = Main.primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("./GUI/warehouseAddScreen.fxml"));
@@ -56,6 +68,10 @@ public class superUserController {
         primaryStage.show();
     }
 
+    /**
+     * Adds Stores to the Database
+     * @throws IOException
+     */
     public void AddStore() throws IOException {
         Stage primaryStage = Main.primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("./GUI/storeAddScreen.fxml"));
@@ -65,6 +81,10 @@ public class superUserController {
         primaryStage.show();
     }
 
+    /**
+     * See 
+     * @throws IOException
+     */
     public void seeWarehouseInfo() throws IOException{
         Warehouse w = warehouseList.getSelectionModel().getSelectedItem();
         if(w != null) {

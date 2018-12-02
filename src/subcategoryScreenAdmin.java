@@ -1,3 +1,7 @@
+/**
+ * This class is the controller for display sub categories for admin.
+ * @author Apoorv Singh, Gaurav Aggarwal
+ */
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -20,6 +24,11 @@ public class subcategoryScreenAdmin {
     @FXML
     ListView<String> list;
 
+    /**
+     * Sets up initial values.
+     * @param s Store or Warehouse Object
+     * @param category Node for the current category Address
+     */
     void setValues(Building s, String category) {
         if (s instanceof Warehouse)
             this.hmap = ((Warehouse) s).getCatalogue();
@@ -35,6 +44,10 @@ public class subcategoryScreenAdmin {
         list.setItems(x);
     }
 
+    /**
+     * adds sub categories inside the current category.
+     * @throws IOException
+     */
     public void addsubCategory() throws IOException {
         Stage primaryStage = Main.primaryStage;
         FXMLLoader loader = new FXMLLoader();
@@ -48,6 +61,10 @@ public class subcategoryScreenAdmin {
         primaryStage.show();
     }
 
+    /**
+     * Function for signing out the user, returns the user to the main screen
+     * @throws IOException Thrown by load function
+     */
     public void signOut() throws IOException {
         Stage primaryStage = Main.primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("./GUI/MainScreen.fxml"));
@@ -57,6 +74,10 @@ public class subcategoryScreenAdmin {
         primaryStage.show();
     }
 
+    /**
+     * Go inside the selected category/sub-category
+     * @throws IOException
+     */
     public void forward() throws IOException {
         String selected = list.getSelectionModel().getSelectedItem();
 
@@ -72,6 +93,10 @@ public class subcategoryScreenAdmin {
         primaryStage.show();
     }
 
+    /**
+     * return to the previous screen
+     * @throws IOException Given by the load function
+     */
     public void back() throws IOException{
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("./GUI/categoryScreenAdmin.fxml"));

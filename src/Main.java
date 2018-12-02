@@ -1,3 +1,7 @@
+/**
+ * This class is the Main class of our application
+ * @author Apoorv Singh, Gaurav Aggarwal
+ */
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

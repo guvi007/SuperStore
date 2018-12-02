@@ -145,7 +145,7 @@ public class StoreDatabase implements Serializable {
     }
 
     /**
-     * Deleted stores linked to warehouse
+     * Deletes stores linked to warehouse
      * @param w the warehouse
      */
     public void deleteRelatedStores(Warehouse w) {

@@ -1,3 +1,7 @@
+/**
+ * This class is the controller for showing sub Categories.
+ * @author Apoorv Singh, Gaurav Aggarwal
+ */
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -28,6 +32,13 @@ public class subCategoryScreenController {
     @FXML
     TextField searchBar;
 
+    /**
+     * sets up the values from the parameters
+     * @param s
+     * @param categoryName
+     * @param e Enduser instance
+     * @param hmap
+     */
     public void setValues(Store s, String categoryName, EndUser e, HashMap<String, ArrayList<Object>> hmap) {
         this.cname = categoryName;
         this.e = e;
@@ -44,12 +55,19 @@ public class subCategoryScreenController {
 
     }
 
+    /**
+     * sorts the list of categories/subcategories
+     */
     public void sortList() {
         Collections.sort(y);
         ObservableList<String> x = FXCollections.observableList(y);
         subCategoryList.setItems(x);
     }
 
+    /**
+     * Shows the product list when a sub-category is selected.
+     * @throws IOException
+     */
     public void openProducts() throws IOException {
         String subCategoryName = subCategoryList.getSelectionModel().getSelectedItem();
 
@@ -69,6 +87,10 @@ public class subCategoryScreenController {
 
     }
 
+    /**
+     * Function for signing out the user, returns the user to the main screen
+     * @throws IOException Thrown by load function
+     */
     public void signOut() throws IOException {
         Stage primaryStage = Main.primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("./GUI/MainScreen.fxml"));
@@ -78,6 +100,10 @@ public class subCategoryScreenController {
         primaryStage.show();
     }
 
+    /**
+     * return to the previous screen
+     * @throws IOException Given by the load function
+     */
     public void back() throws IOException {
         Stage primaryStage = Main.primaryStage;
         FXMLLoader loader = new FXMLLoader();
@@ -90,6 +116,7 @@ public class subCategoryScreenController {
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();
     }
+
 
     public void searchResults() throws IOException {
         String x = searchBar.getText();
