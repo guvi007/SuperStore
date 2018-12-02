@@ -51,7 +51,7 @@
                   <Image url="@store-logo-icon-90118.png" />
                </image>
             </ImageView>
-            <Button layoutX="69.0" layoutY="273.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="128.0" style="-fx-background-radius: 8PX;" text=" PRODUCTS">
+            <Button layoutX="69.0" layoutY="273.0" mnemonicParsing="false" onAction="#products" prefHeight="39.0" prefWidth="128.0" style="-fx-background-radius: 8PX;" text=" PRODUCTS">
                <font>
                   <Font size="16.0" />
                </font>

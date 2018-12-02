@@ -29,9 +29,9 @@ public class Main extends Application implements Serializable {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         Main.deserialize();
-//        if(Main.isSuperUserPresent()==false) {
-//            Main.configFile();
-//        }
+        if(Main.isSuperUserPresent()==false) {
+            Main.configFile();
+        }
 //        database = new Database();
         log = login.getInstance(database);
         launch(args);
@@ -43,7 +43,7 @@ public class Main extends Application implements Serializable {
         try {
             in = new ObjectInputStream(new FileInputStream("Database/config.txt"));
             Object o = in.readObject();
-            if(o == null) {
+            if(o != null) {
                 values = (ArrayList<Object>)o;
             }
         }
@@ -51,6 +51,7 @@ public class Main extends Application implements Serializable {
             if(in!=null)
                 in.close();
         }
+
         if(values.size() == 10) {
             ArrayList<Object> a = new ArrayList<>();
             a.add(values.get(0));

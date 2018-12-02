@@ -48,7 +48,7 @@
                         <Font name="FontAwesome Regular" size="25.0" />
                     </font>
                 </Text>
-                <Button layoutX="243.0" layoutY="346.0" mnemonicParsing="false" onAction="#myWarehouse" prefHeight="37.0" prefWidth="173.0" style="-fx-background-radius: 8PX;" text="  My Warehouse" textAlignment="CENTER">
+                <Button layoutX="408.0" layoutY="346.0" mnemonicParsing="false" onAction="#myWarehouse" prefHeight="37.0" prefWidth="173.0" style="-fx-background-radius: 8PX;" text="  My Warehouse" textAlignment="CENTER">
                     <font>
                         <Font size="16.0" />
                     </font>
@@ -80,14 +80,6 @@
                         <Image url="@warehouse.png" />
                      </image>
                   </ImageView>
-               </graphic>
-            </Button>
-            <Button layoutX="451.0" layoutY="346.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="166.0" style="-fx-background-radius: 8PX;" text="  Messages" textAlignment="CENTER">
-               <font>
-                  <Font size="16.0" />
-               </font>
-               <graphic>
-                  <FontAwesomeIcon glyphName="COMMENTS" size="1.5em" />
                </graphic>
             </Button>
             </children>

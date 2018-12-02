@@ -31,18 +31,12 @@
                         <Image url="@306473.png" />
                     </image>
                 </ImageView>
-                <Button alignment="CENTER" layoutX="84.0" layoutY="348.0" mnemonicParsing="false" onAction="#searchStore" prefHeight="39.0" prefWidth="167.0" style="-fx-background-radius: 8PX;" text="SEARCH STORE">
+                <Button alignment="CENTER" layoutX="235.0" layoutY="350.0" mnemonicParsing="false" onAction="#searchStore" prefHeight="39.0" prefWidth="167.0" style="-fx-background-radius: 8PX;" text="SEARCH STORE">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Button>
-                <FontAwesomeIcon fill="#2125f8" glyphName="SEARCH" layoutX="97.0" layoutY="373.0" size="1.4em" text="" wrappingWidth="15.142857551574707" />
-                <Button alignment="CENTER" layoutX="442.0" layoutY="349.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="167.0" style="-fx-background-radius: 8PX;" text="VIEW CART">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </Button>
-                <FontAwesomeIcon glyphName="SHOPPING_CART" layoutX="453.0" layoutY="377.0" size="2em" />
+                <FontAwesomeIcon fill="#2125f8" glyphName="SEARCH" layoutX="248.0" layoutY="375.0" size="1.4em" text="" wrappingWidth="15.142857551574707" />
                 <Text layoutX="211.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Funds:">
                     <font>
                         <Font size="22.0" />

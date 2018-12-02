@@ -38,6 +38,7 @@ public class categoryScreenController {
         this.e = e;
         this.s = s;
         HashMap<String, ArrayList<Object>> catal = s.getCatalogue();
+        this.hmap = catal;
         for (Object a : catal.get("root")) {
             y.add((String)a);
         }
@@ -61,16 +62,19 @@ public class categoryScreenController {
     public void openSubcategory() throws IOException {
         String categoryName = categoryList.getSelectionModel().getSelectedItem();
 
-        Stage primaryStage = Main.primaryStage;
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("./GUI/subCategoryScreen.fxml"));
-        Parent root = loader.load();
-        subCategoryScreenController scsc = loader.getController();
-        scsc.setValues(s, categoryName, e, hmap);
-        primaryStage.setTitle("Sub-Category Screen");
-        primaryStage.resizableProperty().setValue(Boolean.FALSE);
-        primaryStage.setScene(new Scene(root, 800, 600));
-        primaryStage.show();
+        if(categoryName != null) {
+            Stage primaryStage = Main.primaryStage;
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("./GUI/subCategoryScreen.fxml"));
+            Parent root = loader.load();
+            subCategoryScreenController scsc = loader.getController();
+            scsc.setValues(s, categoryName, e, hmap);
+            primaryStage.setTitle("Sub-Category Screen");
+            primaryStage.resizableProperty().setValue(Boolean.FALSE);
+            primaryStage.setScene(new Scene(root, 800, 600));
+            primaryStage.show();
+        }
+
     }
 
     /**

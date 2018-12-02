@@ -44,9 +44,9 @@ public class searchResultsController {
         this.s = s;
         this.y = y;
 
-        for (Object a : hmap.get(scname)) {
-            y.add((Product) a);
-        }
+//        for (Object a : hmap.get(scname)) {
+//            y.add((Product) a);
+//        }
         ObservableList<Product> x = FXCollections.observableList(y);
         productList.setItems(x);
     }

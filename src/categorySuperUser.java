@@ -19,7 +19,7 @@ import java.util.HashMap;
 public class categorySuperUser {
 
     private HashMap<String, ArrayList<Object>> hmap;
-    private Warehouse war;
+    private Building war;
     @FXML
     ListView<String> list;
 
@@ -28,7 +28,7 @@ public class categorySuperUser {
      * @param hmap The inventory of items
      * @param w The warehouse w
      */
-    public void setUp(HashMap<String, ArrayList<Object>> hmap, Warehouse w) {
+    public void setUp(HashMap<String, ArrayList<Object>> hmap, Building w) {
         this.war = w;
         ArrayList<String> y = new ArrayList<String>();
         this.hmap = hmap;
@@ -82,9 +82,17 @@ public class categorySuperUser {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("./GUI/warehouseScreenInfo.fxml"));
         Parent root = loader.load();
-        warehouseScreenInfoController csc = loader.getController();
-        csc.setValues(war);
-        primaryStage.setTitle("Warehouse Info");
+        if(war instanceof Warehouse) {
+            warehouseScreenInfoController csc = loader.getController();
+            csc.setValues((Warehouse)war);
+            primaryStage.setTitle("Warehouse Info");
+        }
+        else {
+            storeScreenInfoController csc = loader.getController();
+            csc.setValues((Store)war);
+            primaryStage.setTitle("Store Info");
+        }
+
         primaryStage.resizableProperty().setValue(Boolean.FALSE);
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();

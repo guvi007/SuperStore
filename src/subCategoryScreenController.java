@@ -24,7 +24,7 @@ public class subCategoryScreenController {
     private HashMap<String, ArrayList<Object>> hmap;
     private ArrayList<String> y = new ArrayList<>();
     private Store selectedStore;
-    private ArrayList<Product> productList;
+    private ArrayList<Product> productList = new ArrayList<>();
 
     @FXML
     ListView<String> subCategoryList;
@@ -44,9 +44,13 @@ public class subCategoryScreenController {
         this.e = e;
         this.hmap = hmap;
         this.selectedStore = s;
-        System.out.println(cname);
+
 
         for (Object a : hmap.get(cname)) {
+            if (a == null) {
+                System.out.println("k");
+                break;
+            }
             System.out.println(a);
             y.add((String) a);
         }
@@ -71,19 +75,21 @@ public class subCategoryScreenController {
     public void openProducts() throws IOException {
         String subCategoryName = subCategoryList.getSelectionModel().getSelectedItem();
 
-        Stage primaryStage = Main.primaryStage;
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("./GUI/searchResults.fxml"));
-        Parent root = loader.load();
-        searchResultsController src = loader.getController();
-        for (Object a : hmap.get(subCategoryName)) {
-            productList.add((Product)a);
+        if(subCategoryName != null) {
+            Stage primaryStage = Main.primaryStage;
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("./GUI/searchResults.fxml"));
+            Parent root = loader.load();
+            searchResultsController src = loader.getController();
+            for (Object a : hmap.get(subCategoryName)) {
+                productList.add((Product) a);
+            }
+            src.setValues(productList, cname, subCategoryName, e, hmap);
+            primaryStage.setTitle("Products Screen");
+            primaryStage.resizableProperty().setValue(Boolean.FALSE);
+            primaryStage.setScene(new Scene(root, 800, 600));
+            primaryStage.show();
         }
-        src.setValues(productList, cname, subCategoryName, e, hmap);
-        primaryStage.setTitle("Products Screen");
-        primaryStage.resizableProperty().setValue(Boolean.FALSE);
-        primaryStage.setScene(new Scene(root, 800, 600));
-        primaryStage.show();
 
     }
 
