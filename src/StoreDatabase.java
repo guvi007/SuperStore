@@ -78,6 +78,7 @@ public class StoreDatabase implements Serializable {
         this.nameToIdAdmins.remove(storeAdminName);
         this.nameToIdStores.remove(storeName);
         this.stores.remove(storeID);
+        --numStores;
     }
 
     public ArrayList<Store> returnList() {

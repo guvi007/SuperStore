@@ -43,4 +43,9 @@ public class storeScreenInfoController {
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();
     }
+
+    public void delete() throws IOException {
+        Main.giveDatabase().getStoreDatabase().deleteStore(s.getID());
+        back();
+    }
 }

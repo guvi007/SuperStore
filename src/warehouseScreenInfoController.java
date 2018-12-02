@@ -53,4 +53,9 @@ public class warehouseScreenInfoController {
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();
     }
+
+    public void delete() throws IOException {
+        Main.giveDatabase().getWarehouseDatabase().deleteWarehouse(w.getId());
+        back();
+    }
 }

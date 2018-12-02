@@ -58,6 +58,7 @@ public class WarehouseDatabase implements Serializable {
         this.nameToIdAdmins.remove(warehouseAdminName);
         this.nameToIdWarehouse.remove(warehouseName);
         this.warehouses.remove(warehouseID);
+        --numWarehouse;
     }
 
     public ArrayList<Warehouse> returnList() {

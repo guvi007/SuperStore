@@ -59,7 +59,7 @@
                         <FontAwesomeIcon fill="#2125f8" glyphName="SEARCH" size="1.4em" text="" wrappingWidth="15.142857551574707" />
                     </graphic>
                 </Button>
-                <Button layoutX="69.0" layoutY="361.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="128.0" style="-fx-background-radius: 8PX;" text="  DELETE ">
+                <Button layoutX="69.0" layoutY="361.0" mnemonicParsing="false" onAction="#delete" prefHeight="33.0" prefWidth="128.0" style="-fx-background-radius: 8PX;" text="  DELETE ">
                     <font>
                         <Font size="16.0" />
                     </font>
