@@ -9,9 +9,14 @@ public class MainScreenController {
 
     public void endUserScreen() throws IOException {
         Main.temp = 0;
-        Parent root = FXMLLoader.load(getClass().getResource("./GUI/endUserScreen.fxml"));
         Stage primaryStage = Main.primaryStage;
-        primaryStage.setTitle("Welcome User");
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("./GUI/endUserScreen.fxml"));
+        Parent root = loader.load();
+        endUserScreenController eusc = loader.getController();
+        EndUser eu = new EndUser();
+        eusc.setValues(eu);
+        primaryStage.setTitle("EndUser");
         primaryStage.resizableProperty().setValue(Boolean.FALSE);
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();

@@ -19,17 +19,12 @@
             </children></AnchorPane>
         <AnchorPane layoutX="46.0" layoutY="73.0" prefHeight="490.0" prefWidth="682.0" style="-fx-background-color: white; -fx-background-radius: 8px;" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="46.0" AnchorPane.rightAnchor="48.0" AnchorPane.topAnchor="73.0">
          <children>
-            <Button layoutX="38.0" layoutY="95.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="78.0" text="Confirm">
+            <Button layoutX="130.0" layoutY="96.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="78.0" text="Confirm">
                <graphic>
                   <FontAwesomeIcon fill="#14d10a" glyphName="CHECK" />
                </graphic>
             </Button>
-            <Button layoutX="246.0" layoutY="97.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="Cancel">
-               <graphic>
-                  <FontAwesomeIcon fill="#ea0e0e" glyphName="CLOSE" />
-               </graphic>
-            </Button>
-            <TextField layoutX="95.0" layoutY="38.0" />
+            <TextField fx:id="funds" layoutX="95.0" layoutY="38.0" />
          </children>
         </AnchorPane>
     </children>
