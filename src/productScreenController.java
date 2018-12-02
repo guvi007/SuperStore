@@ -1,3 +1,8 @@
+/**
+ * Controller of productScreen for admin(warehouse/store)
+ * @author Apoorv Singh, Gaurav Aggarwal
+ */
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -24,6 +29,15 @@ public class productScreenController {
     @FXML
     TextField quantity;
 
+    /**
+     * Sets up the screen
+     * @param products List of products
+     * @param cname Category name
+     * @param scname subcategory name
+     * @param product The product
+     * @param e End User
+     * @param hmap The inventory
+     */
     public void setValues(ArrayList<Product> products, String cname, String scname, Product product, EndUser e, HashMap<String, ArrayList<Object>> hmap) {
         this.product = product;
         this.endUser = e;
@@ -37,6 +51,9 @@ public class productScreenController {
         price.setText(Integer.toString(product.getPrice()));
     }
 
+    /**
+     * Buys the product
+     */
     public void buyProduct() {
         int q = Integer.valueOf(this.quantity.getText());
         if (q <= this.product.getQuantity() && this.endUser.getFunds() >= q*this.product.getQuantity()) {
@@ -50,10 +67,18 @@ public class productScreenController {
             setText("Insufficient Funds");
     }
 
+    /**
+     * Incase of insufficient funds or insufficient stock
+     * @param message
+     */
     public void setText(String message) {
         this.errorText.setText(message);
     }
 
+    /**
+     * Function for signing out the user, returns the user to the main screen
+     * @throws IOException Thrown by load function
+     */
     public void signOut() throws IOException {
         Stage primaryStage = Main.primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("./GUI/MainScreen.fxml"));
@@ -63,6 +88,10 @@ public class productScreenController {
         primaryStage.show();
     }
 
+    /**
+     * Goes back to the previous screen
+     * @throws IOException Thrown by load function
+     */
     public void back() throws IOException {
 
         Stage primaryStage = Main.primaryStage;

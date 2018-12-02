@@ -1,5 +1,5 @@
 /**
- * Controller of productScreen for admin(warehouse/store
+ * Controller of productScreen for admin(warehouse/store)
  * @author Apoorv Singh, Gaurav Aggarwal
  */
 
@@ -23,6 +23,10 @@ public class productScreenAdmin {
     @FXML
     Text name, id;
 
+    /**
+     * Sets up the screen
+     * @param selected The selected product
+     */
     public void setValues(Product selected) {
         name.setText(selected.getName());
         id.setText(selected.getID());
@@ -31,6 +35,10 @@ public class productScreenAdmin {
 
     }
 
+    /**
+     * Function for signing out the user, returns the user to the main screen
+     * @throws IOException Thrown by load function
+     */
     public void signOut() throws IOException {
         Stage primaryStage = Main.primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("./GUI/MainScreen.fxml"));
@@ -40,6 +48,9 @@ public class productScreenAdmin {
         primaryStage.show();
     }
 
+    /**
+     * Edits the price and quantity of the product
+     */
     public void edit() {
         int q = Integer.valueOf(quantity.getText());
         int pr = Integer.valueOf(price.getText());

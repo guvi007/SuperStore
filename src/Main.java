@@ -1,3 +1,8 @@
+/**
+ * The main file
+ * @author Apoorv Singh, Gaurav Aggarwal
+ */
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,6 +18,11 @@ public class Main extends Application implements Serializable {
     public static int temp;
     private static Database database;
 
+    /**
+     * Starts the application
+     * @param primaryStage The main Stage
+     * @throws Exception Thrown by the load function
+     */
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("./GUI/MainScreen.fxml"));
@@ -23,27 +33,47 @@ public class Main extends Application implements Serializable {
         primaryStage.show();
     }
 
+    /**
+     * The main function
+     * @param args
+     */
     public static void main(String[] args) {
         database = new Database();
         log = login.getInstance(database);
         launch(args);
     }
 
+    /**
+     * Returns whether superuser has been initialised
+     * @return Returns true if superuser has been initialised, false otherwise
+     */
     public static boolean isSuperUserPresent() {
         if(database.getSuperUser() == null)
             return false;
         return true;
     }
 
+    /**
+     * Setter for superuser
+     * @return Returns the superuser
+     */
     public static User setSuperUser() {
         database.setSuperUser();
         return database.getSuperUser();
     }
 
+    /**
+     * Getter for database
+     * @return Returns the database
+     */
     public static Database giveDatabase() {
         return database;
     }
 
+    /**
+     * Function for serializing
+     * @throws IOException Thrown by FileOutputStream
+     */
     public static void serialize() throws IOException {
         Database d = database;
         ObjectOutputStream out = null;
@@ -57,6 +87,11 @@ public class Main extends Application implements Serializable {
         }
     }
 
+    /**
+     * Function for deserealizing
+     * @throws IOException Thrown by FileInputStream
+     * @throws ClassNotFoundException Thrown by readObject
+     */
     public static void deserialize() throws IOException, ClassNotFoundException {
         ObjectInputStream in = null;
         try {

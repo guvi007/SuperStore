@@ -1,3 +1,8 @@
+/**
+ * Controller for ScreenInfo
+ * @author Apoorv Singh, Gaurav Aggarwal
+ */
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,6 +18,10 @@ public class storeScreenInfoController {
     @FXML
     private Text name, adminid, d,h,k,id, wareid, warename;
 
+    /**
+     * Sets up the screen
+     * @param store The store
+     */
     public void setValues(Store store) {
         s = store;
         id.setText(store.getID());
@@ -26,6 +35,10 @@ public class storeScreenInfoController {
         warename.setText(linked.getName());
     }
 
+    /**
+     * Function for signing out the user, returns the user to the main screen
+     * @throws IOException Thrown by load function
+     */
     public void signOut() throws IOException {
         Stage primaryStage = Main.primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("./GUI/MainScreen.fxml"));
@@ -35,6 +48,10 @@ public class storeScreenInfoController {
         primaryStage.show();
     }
 
+    /**
+     * Goes back to the previous screen
+     * @throws IOException Thrown by load function
+     */
     public void back() throws IOException {
         Stage primaryStage = Main.primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("./GUI/superUser.fxml"));
@@ -44,6 +61,10 @@ public class storeScreenInfoController {
         primaryStage.show();
     }
 
+    /**
+     * For deleting the store
+     * @throws IOException Thrown by load function
+     */
     public void delete() throws IOException {
         Main.giveDatabase().getStoreDatabase().deleteStore(s.getID());
         Main.giveDatabase().getWarehouseDatabase().deleteLinkedStore(s);

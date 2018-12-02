@@ -1,3 +1,9 @@
+/**
+ * The store database
+ * @author Apoorv Singh, Gaurav Aggarwal
+ */
+
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,6 +15,9 @@ public class StoreDatabase implements Serializable {
     private HashMap<String, String> nameToIdStores, nameToIdAdmins;
     private int numStores;
 
+    /**
+     * Constructor
+     */
     public StoreDatabase() {
         stores = new HashMap<>();
         storeAdmins = new HashMap<>();
@@ -17,6 +26,11 @@ public class StoreDatabase implements Serializable {
         numStores = 0;
     }
 
+    /**
+     *
+     * @param parameter StoreAdmin
+     * @return Returns StoreAdmin if present, null otherwise
+     */
     public User searchStoreAdmin(String parameter) {
         if(storeAdmins.containsKey(parameter)) {
             return storeAdmins.get(parameter);
@@ -26,6 +40,11 @@ public class StoreDatabase implements Serializable {
         }
     }
 
+    /**
+     *
+     * @param parameter Store name
+     * @return Returns Store if present, null otherwise
+     */
     Building searchStore(String parameter) {
         if(nameToIdStores.containsKey(parameter)) {
             parameter = nameToIdStores.get(parameter);
@@ -73,6 +92,10 @@ public class StoreDatabase implements Serializable {
         return (Store) stores.get(name);
     }
 
+    /**
+     * Deletes the store
+     * @param storeID storeID
+     */
     void deleteStore(String storeID) {
         String storeAdminName = ((Store)stores.get(storeID)).getMyAdmin().getName();
         String adminLogin = nameToIdAdmins.get(storeAdminName);
@@ -84,6 +107,9 @@ public class StoreDatabase implements Serializable {
         --numStores;
     }
 
+    /**
+     * @return Returns list of stores
+     */
     public ArrayList<Store> returnList() {
         ArrayList<Store> x = new ArrayList<>();
         for (String a : this.stores.keySet())
@@ -91,22 +117,37 @@ public class StoreDatabase implements Serializable {
         return x;
     }
 
+    /**
+     * @return Returns number of stores
+     */
     public int getNumStores() {
         return this.numStores;
     }
 
+    /**
+     * @param s AdminLogin
+     * @return Returns true if name is correct, false otherwise
+     */
     public boolean isNamePresent(String s) {
         if(nameToIdStores.containsKey(s))
             return true;
         return false;
     }
 
+    /**
+     * @param s AdminLogin
+     * @return Returns true if login is correct, false otherwise
+     */
     public boolean isAdminLoginPresent(String s) {
         if(storeAdmins.containsKey(s))
             return true;
         return false;
     }
 
+    /**
+     * Deleted stores linked to warehouse
+     * @param w the warehouse
+     */
     public void deleteRelatedStores(Warehouse w) {
         for(String a: stores.keySet()) {
             Store s = (Store)stores.get(a);

@@ -1,3 +1,8 @@
+/**
+ * Controller for logging in
+ * @author Apoorv Singh, Gaurav Aggarwal
+ */
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,6 +15,10 @@ import java.io.IOException;
 
 public class loginPageController {
 
+    /**
+     * Takes to the previous screen
+     * @throws IOException Thrown by the load function
+     */
     public void back() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("./GUI/MainScreen.fxml"));
         Stage primaryStage = Main.primaryStage;
@@ -22,6 +31,11 @@ public class loginPageController {
     @FXML
     private TextField username, password,invalidField;
 
+    /**
+     * Checks the credential of the user
+     * @param Event The new Event
+     * @throws IOException Thrown by the load function
+     */
     @FXML
     private void checkCredentials(ActionEvent Event) throws IOException {
         String enteredUsername = username.getText(), enteredPassword = password.getText();

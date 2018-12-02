@@ -1,3 +1,8 @@
+/**
+ * The storeAdmin homepage controller
+ * @author Apoorv Singh, Gaurav Aggarwal
+ */
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,6 +18,10 @@ public class storeAdminScreenController {
     @FXML
     private Text welcome, name, id;
 
+    /**
+     * Sets up the Screen
+     * @param w The store admin
+     */
     public void setValues(StoreAdmin w) {
         admin = w;
         welcome.setText("WELCOME, " + w.getName());
@@ -20,6 +29,10 @@ public class storeAdminScreenController {
         id.setText(w.getID());
     }
 
+    /**
+     * Function for signing out the user, returns the user to the main screen
+     * @throws IOException Thrown by load function
+     */
     public void signOut() throws IOException {
         Stage primaryStage = Main.primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("./GUI/MainScreen.fxml"));
@@ -29,6 +42,10 @@ public class storeAdminScreenController {
         primaryStage.show();
     }
 
+    /**
+     * Goes to the next screen
+     * @throws IOException Thrown by load function
+     */
     public void myStore() throws IOException{
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("./GUI/storeScreenInfoAdmin.fxml"));

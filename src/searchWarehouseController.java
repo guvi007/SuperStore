@@ -1,3 +1,8 @@
+/**
+ * Lists all the warehouses
+ * @author Apoorv Singh, Gaurav Aggarwal
+ */
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -16,6 +21,9 @@ public class searchWarehouseController {
     @FXML
     private ListView<Warehouse> warehouses;
 
+    /**
+     * Sets up the warehouse database
+     */
     public void initialize() {
         ArrayList<Warehouse> w = Main.giveDatabase().getWarehouseDatabase().returnList();
         if(w.size() > 0) {
@@ -24,10 +32,18 @@ public class searchWarehouseController {
         }
     }
 
+    /**
+     * Initialises the Screen
+     * @param w The warehouse admin
+     */
     public void setValues(WarehouseAdmin w) {
         admin = w;
     }
 
+    /**
+     * Goes back to the previous screen
+     * @throws IOException Thrown by load function
+     */
     public void back() throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("./GUI/warehouseAdminScreen.fxml"));
@@ -41,6 +57,10 @@ public class searchWarehouseController {
         primaryStage.show();
     }
 
+    /**
+     * Function for signing out the user, returns the user to the main screen
+     * @throws IOException Thrown by load function
+     */
     public void signOut() throws IOException {
         Stage primaryStage = Main.primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("./GUI/MainScreen.fxml"));
@@ -50,6 +70,10 @@ public class searchWarehouseController {
         primaryStage.show();
     }
 
+    /**
+     * Loads info of other warehouse
+     * @throws IOException Thrown by load function
+     */
     public void seeWarehouseInfo() throws IOException{
         Warehouse w = warehouses.getSelectionModel().getSelectedItem();
         if(w != null) {

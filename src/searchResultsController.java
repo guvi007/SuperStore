@@ -1,3 +1,8 @@
+/**
+ * Controller of search results of products
+ * @author Apoorv Singh, Gaurav Aggarwal
+ */
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -23,6 +28,14 @@ public class searchResultsController {
     @FXML
     ListView<Product> productList;
 
+    /**
+     * Sets up the screen
+     * @param y List of products
+     * @param cname Category name
+     * @param subCategoryName SubcategoryName
+     * @param e EndUser
+     * @param hmap The inventory
+     */
     public void setValues(ArrayList<Product> y, String cname, String subCategoryName, EndUser e, HashMap<String, ArrayList<Object>> hmap) {
         this.scname = subCategoryName;
         this.cname = cname;
@@ -38,12 +51,19 @@ public class searchResultsController {
         productList.setItems(x);
     }
 
+    /**
+     * Displays in a sorted manner
+     */
     public void sortList() {
         Collections.sort(y);
         ObservableList<Product> x = FXCollections.observableList(y);
         productList.setItems(x);
     }
 
+    /**
+     * Goes to next screen
+     * @throws IOException Thrown by load function
+     */
     public void openProduct() throws IOException {
         Product product = productList.getSelectionModel().getSelectedItem();
 
@@ -62,6 +82,10 @@ public class searchResultsController {
         primaryStage.show();
     }
 
+    /**
+     * Function for signing out the user, returns the user to the main screen
+     * @throws IOException Thrown by load function
+     */
     public void signOut() throws IOException {
         Stage primaryStage = Main.primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("./GUI/MainScreen.fxml"));
@@ -71,6 +95,10 @@ public class searchResultsController {
         primaryStage.show();
     }
 
+    /**
+     * Goes back to the previous screen
+     * @throws IOException Thrown by load function
+     */
     public void back() throws IOException {
         Stage primaryStage = Main.primaryStage;
         FXMLLoader loader = new FXMLLoader();

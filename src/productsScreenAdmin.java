@@ -1,3 +1,8 @@
+/**
+ * Controller of productsScreen for admin(warehouse/store)
+ * @author Apoorv Singh, Gaurav Aggarwal
+ */
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -20,6 +25,11 @@ public class productsScreenAdmin {
     @FXML
     ListView<Product> list;
 
+    /**
+     * Sets up the screen
+     * @param s The building(Store/Warehouse)
+     * @param subcategory The subcategory
+     */
     void setValues(Building s, String subcategory) {
         if (s instanceof Warehouse)
             this.hmap = ((Warehouse) s).getCatalogue();
@@ -35,6 +45,10 @@ public class productsScreenAdmin {
         list.setItems(x);
     }
 
+    /**
+     * Function for signing out the user, returns the user to the main screen
+     * @throws IOException Thrown by load function
+     */
     public void signOut() throws IOException {
         Stage primaryStage = Main.primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("./GUI/MainScreen.fxml"));
@@ -44,6 +58,10 @@ public class productsScreenAdmin {
         primaryStage.show();
     }
 
+    /**
+     * Goes to the next Screen
+     * @throws IOException Thrown by load function
+     */
     public void forward() throws IOException {
         Product selected = list.getSelectionModel().getSelectedItem();
 
@@ -59,6 +77,10 @@ public class productsScreenAdmin {
         primaryStage.show();
     }
 
+    /**
+     * For adding a new Product
+     * @throws IOException Thrown by load function
+     */
     public void addProduct() throws IOException {
         Stage primaryStage = Main.primaryStage;
         FXMLLoader loader = new FXMLLoader();
@@ -72,6 +94,9 @@ public class productsScreenAdmin {
         primaryStage.show();
     }
 
+    /**
+     * For deleting a product
+     */
     public void delete() {
         Product selected = list.getSelectionModel().getSelectedItem();
 

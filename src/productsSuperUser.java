@@ -1,3 +1,8 @@
+/**
+ * Controller of productsScreen for superuser
+ * @author Apoorv Singh, Gaurav Aggarwal
+ */
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -16,6 +21,11 @@ public class productsSuperUser {
     @FXML
     ListView<Product> list;
 
+    /**
+     * Sets up the screen
+     * @param hmap The inventory
+     * @param sub The subcategory
+     */
     public void setUp(HashMap<String, ArrayList<Object>> hmap, String sub) {
         ArrayList<Product> y = new ArrayList<Product>();
         for (Object a : hmap.get(sub)) {
@@ -25,6 +35,10 @@ public class productsSuperUser {
         list.setItems(x);
     }
 
+    /**
+     * Function for signing out the user, returns the user to the main screen
+     * @throws IOException Thrown by load function
+     */
     public void signOut() throws IOException {
         Stage primaryStage = Main.primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("./GUI/MainScreen.fxml"));
@@ -34,6 +48,10 @@ public class productsSuperUser {
         primaryStage.show();
     }
 
+    /**
+     * Goes to the next Screen
+     * @throws IOException Thrown by load function
+     */
     public void forward() throws IOException {
         Product selected = list.getSelectionModel().getSelectedItem();
 

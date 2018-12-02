@@ -101,7 +101,7 @@ public class Product implements Serializable, Comparable<Product> {
 
     /**
      *
-     * @return Return toString form
+     * @return Return toString form of the product
      */
     @Override
     public String toString() {
