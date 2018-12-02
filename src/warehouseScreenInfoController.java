@@ -65,7 +65,7 @@ public class warehouseScreenInfoController {
         loader.setLocation(getClass().getResource("./GUI/categoryScreenSuperUser.fxml"));
         Parent root = loader.load();
         categorySuperUser wsi = loader.getController();
-        wsi.setUp(w.getCatalogue());
+        wsi.setUp(w.getCatalogue(), w);
         Stage primaryStage = Main.primaryStage;
         primaryStage.setTitle("Warehouse Products");
         primaryStage.resizableProperty().setValue(Boolean.FALSE);

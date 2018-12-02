@@ -18,13 +18,13 @@ public class subcategorySuperUser {
     ListView<String> list;
 
     public void setUp(HashMap<String, ArrayList<Object>> hmap, String cat) {
-        ArrayList<String> y = new ArrayList<String>();
-        this.hmap = hmap;
-        for (Object a : hmap.get(cat)) {
-            y.add((String)a);
-        }
-        ObservableList<String> x = FXCollections.observableList(y);
-        list.setItems(x);
+            ArrayList<String> y = new ArrayList<String>();
+            this.hmap = hmap;
+            for (Object a : hmap.get(cat)) {
+                y.add((String)a);
+            }
+            ObservableList<String> x = FXCollections.observableList(y);
+            list.setItems(x);
     }
 
     public void signOut() throws IOException {
@@ -39,15 +39,17 @@ public class subcategorySuperUser {
     public void forward() throws IOException {
         String selected = list.getSelectionModel().getSelectedItem();
 
-        Stage primaryStage = Main.primaryStage;
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("./GUI/productsSuperUser.fxml"));
-        Parent root = loader.load();
-        productsSuperUser csc = loader.getController();
-        csc.setUp(hmap, selected);
-        primaryStage.setTitle("Products Screen");
-        primaryStage.resizableProperty().setValue(Boolean.FALSE);
-        primaryStage.setScene(new Scene(root, 800, 600));
-        primaryStage.show();
+        if( selected != null ) {
+            Stage primaryStage = Main.primaryStage;
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("./GUI/productsSuperUser.fxml"));
+            Parent root = loader.load();
+            productsSuperUser csc = loader.getController();
+            csc.setUp(hmap, selected);
+            primaryStage.setTitle("Products Screen");
+            primaryStage.resizableProperty().setValue(Boolean.FALSE);
+            primaryStage.setScene(new Scene(root, 800, 600));
+            primaryStage.show();
+        }
     }
 }

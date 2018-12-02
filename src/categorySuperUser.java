@@ -14,10 +14,12 @@ import java.util.HashMap;
 public class categorySuperUser {
 
     private HashMap<String, ArrayList<Object>> hmap;
+    private Warehouse war;
     @FXML
     ListView<String> list;
 
-    public void setUp(HashMap<String, ArrayList<Object>> hmap) {
+    public void setUp(HashMap<String, ArrayList<Object>> hmap, Warehouse w) {
+        this.war = w;
         ArrayList<String> y = new ArrayList<String>();
         this.hmap = hmap;
         for (Object a : hmap.get("root")) {
@@ -44,12 +46,25 @@ public class categorySuperUser {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("./GUI/subcategorySuperUser.fxml"));
             Parent root = loader.load();
-            productsSuperUser csc = loader.getController();
+            subcategorySuperUser csc = loader.getController();
             csc.setUp(hmap, selected);
             primaryStage.setTitle("Subcategory Screen");
             primaryStage.resizableProperty().setValue(Boolean.FALSE);
             primaryStage.setScene(new Scene(root, 800, 600));
             primaryStage.show();
         }
+    }
+
+    public void back() throws IOException{
+        Stage primaryStage = Main.primaryStage;
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("./GUI/warehouseScreenInfo.fxml"));
+        Parent root = loader.load();
+        warehouseScreenInfoController csc = loader.getController();
+        csc.setValues(war);
+        primaryStage.setTitle("Warehouse Info");
+        primaryStage.resizableProperty().setValue(Boolean.FALSE);
+        primaryStage.setScene(new Scene(root, 800, 600));
+        primaryStage.show();
     }
 }
