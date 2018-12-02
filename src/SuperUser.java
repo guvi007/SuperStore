@@ -17,11 +17,4 @@ public class SuperUser extends User implements Serializable {
         this.endUserDatabase = d.getEndUserDatabase();
     }
 
-//    void createStore(String name, Warehouse w, String adminName, String adminLogin, String adminpassword) {
-//        if (storeDatabase.checkAdminId(adminLogin))
-//            storeDatabase.addStore(name, w, adminName, adminLogin, adminpassword);
-//        else
-//            throw new CommonIDException("The ID is already there");
-//    }
-
 }

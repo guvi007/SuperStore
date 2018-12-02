@@ -106,4 +106,14 @@ public class StoreDatabase implements Serializable {
             return true;
         return false;
     }
+
+    public void deleteRelatedStores(Warehouse w) {
+        for(String a: stores.keySet()) {
+            Store s = (Store)stores.get(a);
+            if(s.getLinkedWarehouse() == w) {
+                 Main.giveDatabase().getWarehouseDatabase().deleteLinkedStore(s);
+                 this.deleteStore(s.getID());
+            }
+        }
+    }
 }

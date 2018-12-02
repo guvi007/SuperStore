@@ -49,4 +49,21 @@ public class searchWarehouseController {
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();
     }
+
+    public void seeWarehouseInfo() throws IOException{
+        Warehouse w = warehouses.getSelectionModel().getSelectedItem();
+        if(w != null) {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("./GUI/warehouseScreenInfoOthers.fxml"));
+            Parent root = loader.load();
+            warehouseScreenInfoOthersController wsi = loader.getController();
+            wsi.setValues(w,admin);
+            Stage primaryStage = Main.primaryStage;
+            primaryStage.setTitle("Warehouse Info Screen");
+            primaryStage.resizableProperty().setValue(Boolean.FALSE);
+            primaryStage.setScene(new Scene(root, 800, 600));
+            primaryStage.show();
+        }
+    }
+
 }

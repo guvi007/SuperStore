@@ -84,4 +84,11 @@ public class WarehouseDatabase implements Serializable {
         return false;
     }
 
+    public void deleteLinkedStore(Store s) {
+        for(String a : this.warehouses.keySet()) {
+            Warehouse w = (Warehouse)this.warehouses.get(a);
+            w.checkndelete(s);
+        }
+    }
+
 }

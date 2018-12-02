@@ -121,6 +121,12 @@ public class Warehouse implements Building, Serializable {
 
     @Override
     public String toString() {
-        return this.id + " : " + this.getName().toUpperCase();
+        return this.id + " : " + this.getName();
+    }
+
+    public void checkndelete(Store s) {
+        if(stores.contains(s)) {
+            stores.remove(s);
+        }
     }
 }

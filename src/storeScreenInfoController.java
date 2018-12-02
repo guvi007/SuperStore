@@ -46,6 +46,7 @@ public class storeScreenInfoController {
 
     public void delete() throws IOException {
         Main.giveDatabase().getStoreDatabase().deleteStore(s.getID());
+        Main.giveDatabase().getWarehouseDatabase().deleteLinkedStore(s);
         back();
     }
 }

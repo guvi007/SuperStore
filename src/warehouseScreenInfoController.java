@@ -56,6 +56,7 @@ public class warehouseScreenInfoController {
 
     public void delete() throws IOException {
         Main.giveDatabase().getWarehouseDatabase().deleteWarehouse(w.getId());
+        Main.giveDatabase().getStoreDatabase().deleteRelatedStores(w);
         back();
     }
 }

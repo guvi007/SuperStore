@@ -32,6 +32,6 @@
                 </Button>
             </children>
         </AnchorPane>
-      <ListView fx:id="warehouses" layoutX="52.0" layoutY="208.0" prefHeight="344.0" prefWidth="720.0" />
+      <ListView fx:id="warehouses" layoutX="52.0" layoutY="208.0" onMouseClicked="#seeWarehouseInfo" prefHeight="344.0" prefWidth="720.0" />
     </children>
 </AnchorPane>
