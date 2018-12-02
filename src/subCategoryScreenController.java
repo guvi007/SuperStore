@@ -98,6 +98,7 @@ public class subCategoryScreenController {
         loader.setLocation(getClass().getResource("./GUI/searchResults.fxml"));
         Parent root = loader.load();
         searchResultsController src = loader.getController();
+        productList = selectedStore.returnProductList(x);
         src.setValues(productList, cname, "", e, hmap);
         primaryStage.setTitle("Products Screen");
         primaryStage.resizableProperty().setValue(Boolean.FALSE);

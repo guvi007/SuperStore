@@ -23,14 +23,17 @@ public class searchResultsController {
     @FXML
     ListView<Product> productList;
 
-    public void setValues(ArrayList<Product> ProductList, String cname, String subCategoryName, EndUser e, HashMap<String, ArrayList<Object>> hmap) {
+    public void setValues(ArrayList<Product> y, String cname, String subCategoryName, EndUser e, HashMap<String, ArrayList<Object>> hmap) {
         this.scname = subCategoryName;
         this.cname = cname;
         this.e = e;
         this.hmap = hmap;
         this.s = s;
+        this.y = y;
 
-        this.y = ProductList;
+        for (Object a : hmap.get(scname)) {
+            y.add((Product) a);
+        }
         ObservableList<Product> x = FXCollections.observableList(y);
         productList.setItems(x);
     }
@@ -49,6 +52,9 @@ public class searchResultsController {
         loader.setLocation(getClass().getResource("./GUI/productScreenEndUser.fxml"));
         Parent root = loader.load();
         productScreenController psc = loader.getController();
+        for (Object a : hmap.get(scname)) {
+            y.add((Product)a);
+        }
         psc.setValues(y, cname, scname, product, e, hmap);
         primaryStage.setTitle("Product Screen");
         primaryStage.resizableProperty().setValue(Boolean.FALSE);
