@@ -1,3 +1,9 @@
+/**
+ * Controller for end user home screen
+ * @author Apoorv Singh, Gaurav Aggarwal
+ */
+
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,11 +19,19 @@ public class endUserScreenController {
     @FXML
     private Text funds;
 
+    /**
+     * Sets up the screen
+     * @param eu The end User
+     */
     void setValues(EndUser eu) {
         this.endUser = eu;
         funds.setText(Integer.toString(this.endUser.getFunds()));
     }
 
+    /**
+     * Function for signing out the user, returns the user to the main screen
+     * @throws IOException Thrown by load function
+     */
     public void signOut() throws IOException {
         Stage primaryStage = Main.primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("./GUI/MainScreen.fxml"));
@@ -27,6 +41,10 @@ public class endUserScreenController {
         primaryStage.show();
     }
 
+    /**
+     * Adds funds for the end user
+     * @throws IOException Thrown by load function
+     */
     public void addFunds() throws IOException {
         Stage primaryStage = Main.primaryStage;
         FXMLLoader loader = new FXMLLoader();
@@ -41,6 +59,10 @@ public class endUserScreenController {
         primaryStage.show();
     }
 
+    /**
+     * Opens the next screen
+     * @throws IOException Thrown by load function
+     */
     public void searchStore() throws IOException {
         Stage primaryStage = Main.primaryStage;
         FXMLLoader loader = new FXMLLoader();

@@ -1,3 +1,8 @@
+/**
+ * Controller for categoryScreen, for the Super User
+ * @author Apoorv Singh, Gaurav Aggarwal
+ */
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -18,6 +23,11 @@ public class categorySuperUser {
     @FXML
     ListView<String> list;
 
+    /**
+     * Sets the categoryScreen
+     * @param hmap The inventory of items
+     * @param w The warehouse w
+     */
     public void setUp(HashMap<String, ArrayList<Object>> hmap, Warehouse w) {
         this.war = w;
         ArrayList<String> y = new ArrayList<String>();
@@ -29,6 +39,10 @@ public class categorySuperUser {
         list.setItems(x);
     }
 
+    /**
+     * Function for signing out the user, returns the user to the main screen
+     * @throws IOException Thrown by load function
+     */
     public void signOut() throws IOException {
         Stage primaryStage = Main.primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("./GUI/MainScreen.fxml"));
@@ -38,6 +52,10 @@ public class categorySuperUser {
         primaryStage.show();
     }
 
+    /**
+     * Opens the next screen
+     * @throws IOException Thrown by load function
+     */
     public void forward() throws IOException {
         String selected = list.getSelectionModel().getSelectedItem();
 
@@ -55,6 +73,10 @@ public class categorySuperUser {
         }
     }
 
+    /**
+     * Returns the user to the previous screen
+     * @throws IOException Thrown by load function
+     */
     public void back() throws IOException{
         Stage primaryStage = Main.primaryStage;
         FXMLLoader loader = new FXMLLoader();

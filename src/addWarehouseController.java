@@ -1,3 +1,8 @@
+/**
+ * This class is the controller for adding a new Store.
+ * @author Apoorv Singh, Gaurav Aggarwal
+ */
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,10 +21,17 @@ public class addWarehouseController {
     @FXML
     private Text ID;
 
+    /**
+     * Initialises the screen for adding the new warehouse
+     */
     public void initialize() {
         ID.setText("W-" + Main.giveDatabase().getWarehouseDatabase().getNumWarehouse());
     }
 
+    /**
+     * Function for signing out the user. Returns the user to main screen.
+     * @throws IOException Given by the load function.
+     */
     public void signOut() throws IOException {
         Stage primaryStage = Main.primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("./GUI/MainScreen.fxml"));
@@ -29,6 +41,10 @@ public class addWarehouseController {
         primaryStage.show();
     }
 
+    /**
+     * Takes the user back to the previous screen
+     * @throws IOException Given by the load function.
+     */
     public void back() throws IOException {
         Stage primaryStage = Main.primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("./GUI/superUser.fxml"));
@@ -38,6 +54,11 @@ public class addWarehouseController {
         primaryStage.show();
     }
 
+    /**
+     * Adds the new Store, and returns the user to the previous screen. Checks whether
+     * all the fields have been filled and also checks for their validity.
+     * @throws IOException Given by the load function.
+     */
     public void onAdd() throws IOException {
         if(nameWarehouse.getText().equals("") || nameAdmin.getText().equals("") || loginAdmin.getText().equals("") || passAdmin.getText().equals("")) {
             invalid.setText("Please fill all the fields!");

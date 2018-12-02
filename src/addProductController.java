@@ -1,3 +1,8 @@
+/**
+ * This class is the controller for adding a new product
+ * @author Apoorv Singh, Gaurav Aggarwal
+ */
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -20,11 +25,21 @@ public class addProductController {
     @FXML
     private Text t;
 
+    /**
+     *
+     * @param s The Building object: whether the object is a store or a warehouse
+     * @param node This is the subcategory where the required item
+     *             needs to be added
+     */
     void setUp(Building s, String node) {
         this.node = node;
         this.s = s;
     }
 
+    /**
+     * Updates the catalogue with new product. Also loads the previous screen
+     * @throws IOException Given by the load function
+     */
     public void okay() throws IOException {
         String n = name.getText();
         String i = id.getText();
@@ -54,6 +69,10 @@ public class addProductController {
         primaryStage.show();
     }
 
+    /**
+     * This function displays the message when the insertion is invalid for store
+     * (The product is not in the linked warehouse)
+     */
     void display() {
         t.setText("Invalid Addition");
     }

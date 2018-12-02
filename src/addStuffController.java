@@ -1,3 +1,8 @@
+/**
+ * This class is the controller for adding a category/subcategory.
+ * @author Apoorv Singh, Gaurav Aggarwal
+ */
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -21,11 +26,23 @@ public class addStuffController {
     @FXML
     private Text t;
 
+    /**
+     *
+     * @param s The Building object: whether the object is a store or a warehouse
+     * @param node This is the subcategory where the required item
+     *             needs to be added
+     * @param d The category or subcategory that needs to be added
+     */
     void setUp(Building s, String node, Object d) {
         this.node = node;
         this.s = s;
         this.position = d;
     }
+
+    /**
+     * Updates the catalogue with new category/subcategory. Also loads the previous screen
+     * @throws IOException Given by the load function
+     */
 
     public void okay() throws IOException {
         String value = text.getText();
@@ -66,7 +83,10 @@ public class addStuffController {
     }
 
 
-
+    /**
+     * This function displays the message when the insertion is invalid for store
+     * (The category/subcategory is not in the linked warehouse)
+     */
     void display() {
         t.setText("Invalid Addition");
     }

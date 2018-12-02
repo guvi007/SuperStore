@@ -1,3 +1,8 @@
+/**
+ * Controller for categoryScreen, for the admin(Warehouse/Store)
+ * @author Apoorv Singh, Gaurav Aggarwal
+ */
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -19,6 +24,10 @@ public class categoryScreenAdmin {
     @FXML
     ListView<String> categoryList;
 
+    /**
+     * Sets the categoryScreen
+     * @param s The Store or the warehouse
+     */
     void setValues(Building s) {
         if (s instanceof Warehouse)
             this.hmap = ((Warehouse) s).getCatalogue();
@@ -33,6 +42,10 @@ public class categoryScreenAdmin {
         categoryList.setItems(x);
     }
 
+    /**
+     * Function for adding a new Category
+     * @throws IOException Thrown by load function
+     */
     public void addCategory() throws IOException {
         Stage primaryStage = Main.primaryStage;
         FXMLLoader loader = new FXMLLoader();
@@ -46,6 +59,10 @@ public class categoryScreenAdmin {
         primaryStage.show();
     }
 
+    /**
+     * Function for signing out the user, returns the user to the main screen
+     * @throws IOException Thrown by load function
+     */
     public void signOut() throws IOException {
         Stage primaryStage = Main.primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("./GUI/MainScreen.fxml"));
@@ -55,6 +72,10 @@ public class categoryScreenAdmin {
         primaryStage.show();
     }
 
+    /**
+     * The function which proceeds to the next screen
+     * @throws IOException Thrown by load function
+     */
     public void forward() throws IOException {
         String selectedCategory = categoryList.getSelectionModel().getSelectedItem();
 
@@ -72,6 +93,9 @@ public class categoryScreenAdmin {
         }
     }
 
+    /**
+     * Function for deleting a category; updates the list of categories
+     */
     public void delete() {
         String selectedCategory = categoryList.getSelectionModel().getSelectedItem();
         this.hmap.remove(selectedCategory);
