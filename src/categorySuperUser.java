@@ -39,15 +39,17 @@ public class categorySuperUser {
     public void forward() throws IOException {
         String selected = list.getSelectionModel().getSelectedItem();
 
-        Stage primaryStage = Main.primaryStage;
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("./GUI/subcategorySuperUser.fxml"));
-        Parent root = loader.load();
-        productsSuperUser csc = loader.getController();
-        csc.setUp(hmap, selected);
-        primaryStage.setTitle("Subcategory Screen");
-        primaryStage.resizableProperty().setValue(Boolean.FALSE);
-        primaryStage.setScene(new Scene(root, 800, 600));
-        primaryStage.show();
+        if(selected != null) {
+            Stage primaryStage = Main.primaryStage;
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("./GUI/subcategorySuperUser.fxml"));
+            Parent root = loader.load();
+            productsSuperUser csc = loader.getController();
+            csc.setUp(hmap, selected);
+            primaryStage.setTitle("Subcategory Screen");
+            primaryStage.resizableProperty().setValue(Boolean.FALSE);
+            primaryStage.setScene(new Scene(root, 800, 600));
+            primaryStage.show();
+        }
     }
 }

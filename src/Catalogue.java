@@ -32,7 +32,7 @@ public class Catalogue implements Serializable {
         this.products.get(parentCategory).remove(o);
     }
 
-    HashMap<String, ArrayList<Object>> getProducts() {
+    public HashMap<String, ArrayList<Object>> getProducts() {
         return this.products;
     }
 

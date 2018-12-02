@@ -59,4 +59,17 @@ public class warehouseScreenInfoController {
         Main.giveDatabase().getStoreDatabase().deleteRelatedStores(w);
         back();
     }
+
+    public void products() throws IOException{
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("./GUI/categoryScreenSuperUser.fxml"));
+        Parent root = loader.load();
+        categorySuperUser wsi = loader.getController();
+        wsi.setUp(w.getCatalogue());
+        Stage primaryStage = Main.primaryStage;
+        primaryStage.setTitle("Warehouse Products");
+        primaryStage.resizableProperty().setValue(Boolean.FALSE);
+        primaryStage.setScene(new Scene(root, 800, 600));
+        primaryStage.show();
+    }
 }
