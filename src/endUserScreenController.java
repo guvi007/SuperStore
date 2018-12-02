@@ -8,7 +8,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class endUserScreenController {
-
     private EndUser endUser;
 
     @FXML
@@ -35,10 +34,10 @@ public class endUserScreenController {
         Parent root = loader.load();
         fundsScreenController fsc = loader.getController();
         System.out.println(endUser.getFunds());
-//        fsc.setEndUser(endUser);
+        fsc.setEndUser(endUser);
         primaryStage.setTitle("Funds");
         primaryStage.resizableProperty().setValue(Boolean.FALSE);
-        primaryStage.setScene(new Scene(root, 800, 600));
+        primaryStage.setScene(new Scene(root, 400, 300));
         primaryStage.show();
     }
 }

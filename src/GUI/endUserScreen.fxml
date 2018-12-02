@@ -17,14 +17,6 @@
                         <Font name="Kristen ITC" size="12.0" />
                     </font>
                 </Button>
-                <Button layoutX="22.0" layoutY="8.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="91.0" style="-fx-background-radius: 8PX; -fx-background-color: #FFF;" text="  BACK">
-                    <font>
-                        <Font name="Kristen ITC" size="12.0" />
-                    </font>
-                    <graphic>
-                        <FontAwesomeIcon glyphName="ARROW_LEFT" size="1.3em" text="" />
-                    </graphic>
-                </Button>
                 <FontAwesomeIcon glyphName="POWER_OFF" layoutX="721.0" layoutY="30.0" size="1.7em" />
                 <Text fill="WHITE" layoutX="247.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME, &lt;enduser&gt;">
                     <font>
