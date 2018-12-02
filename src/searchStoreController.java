@@ -37,4 +37,27 @@ public class searchStoreController {
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();
     }
+
+    public void signOut() throws IOException {
+        Stage primaryStage = Main.primaryStage;
+        Parent root = FXMLLoader.load(getClass().getResource("./GUI/MainScreen.fxml"));
+        primaryStage.setTitle("Main Screen");
+        primaryStage.resizableProperty().setValue(Boolean.FALSE);
+        primaryStage.setScene(new Scene(root, 800, 600));
+        primaryStage.show();
+    }
+
+    public void back() throws IOException {
+        Main.temp = 0;
+        Stage primaryStage = Main.primaryStage;
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("./GUI/endUserScreen.fxml"));
+        Parent root = loader.load();
+        endUserScreenController eusc = loader.getController();
+        eusc.setValues(eu);
+        primaryStage.setTitle("EndUser");
+        primaryStage.resizableProperty().setValue(Boolean.FALSE);
+        primaryStage.setScene(new Scene(root, 800, 600));
+        primaryStage.show();
+    }
 }

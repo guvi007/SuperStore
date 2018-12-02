@@ -16,18 +16,13 @@
       </Text>
         <AnchorPane maxWidth="1.7976931348623157E308" prefHeight="120.0" prefWidth="776.0" style="-fx-background-color: #3196DE;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <Text layoutX="226.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME, &lt;enduser&gt;">
-                    <font>
-                        <Font size="35.0" />
-                    </font>
-                </Text>
-                <Button alignment="BOTTOM_RIGHT" contentDisplay="TOP" layoutX="713.0" layoutY="12.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="77.0" style="-fx-background-color: white; -fx-background-radius: 8px;" text=" Sign Out" underline="true">
+                <Button alignment="BOTTOM_RIGHT" contentDisplay="TOP" layoutX="713.0" layoutY="12.0" mnemonicParsing="false" onAction="#signOut" prefHeight="47.0" prefWidth="77.0" style="-fx-background-color: white; -fx-background-radius: 8px;" text=" Sign Out" underline="true">
                     <font>
                         <Font name="Kristen ITC" size="12.0" />
                     </font>
                 </Button>
                 <FontAwesomeIcon glyphName="POWER_OFF" layoutX="743.0" layoutY="35.0" size="2em" text="" wrappingWidth="1.0" />
-            <Button layoutX="16.0" layoutY="9.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="91.0" style="-fx-background-radius: 8PX; -fx-background-color: #FFF;" text="  BACK">
+            <Button layoutX="16.0" layoutY="9.0" mnemonicParsing="false" onAction="#back" prefHeight="33.0" prefWidth="91.0" style="-fx-background-radius: 8PX; -fx-background-color: #FFF;" text="  BACK">
                <font>
                   <Font name="Kristen ITC" size="12.0" />
                </font>
