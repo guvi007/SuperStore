@@ -55,7 +55,7 @@ public class categoryScreenAdmin {
         primaryStage.show();
     }
 
-    public void openSubcategory() throws IOException {
+    public void forward() throws IOException {
         String selectedCategory = categoryList.getSelectionModel().getSelectedItem();
 
         if(selectedCategory != null) {
@@ -70,5 +70,10 @@ public class categoryScreenAdmin {
             primaryStage.setScene(new Scene(root, 800, 600));
             primaryStage.show();
         }
+    }
+
+    public void delete() {
+        String selectedCategory = categoryList.getSelectionModel().getSelectedItem();
+        this.hmap.remove(selectedCategory);
     }
 }

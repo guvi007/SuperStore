@@ -44,7 +44,7 @@ public class productsScreenAdmin {
         primaryStage.show();
     }
 
-    public void openProduct() throws IOException {
+    public void forward() throws IOException {
         Product selected = list.getSelectionModel().getSelectedItem();
 
         Stage primaryStage = Main.primaryStage;
@@ -70,5 +70,11 @@ public class productsScreenAdmin {
         primaryStage.resizableProperty().setValue(Boolean.FALSE);
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();
+    }
+
+    public void delete() {
+        Product selected = list.getSelectionModel().getSelectedItem();
+
+        this.hmap.get(subcategory).remove(selected);
     }
 }

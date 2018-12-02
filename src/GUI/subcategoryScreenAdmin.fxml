@@ -28,13 +28,15 @@
             </children></AnchorPane>
         <AnchorPane layoutX="46.0" layoutY="73.0" prefHeight="490.0" prefWidth="682.0" style="-fx-background-color: white; -fx-background-radius: 8px;" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="46.0" AnchorPane.rightAnchor="48.0" AnchorPane.topAnchor="73.0">
             <children>
-                <ListView fx:id="list" layoutX="24.0" layoutY="100.0" onMouseClicked="#openProducts" prefHeight="389.0" prefWidth="633.0" />
+                <ListView fx:id="list" layoutX="24.0" layoutY="100.0" prefHeight="389.0" prefWidth="633.0" />
                 <Text fill="#3196de" layoutX="30.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Subcategory">
                     <font>
                         <Font name="System Bold" size="18.0" />
                     </font>
                 </Text>
                 <Button layoutX="555.0" layoutY="60.0" mnemonicParsing="false" onAction="#addsubCategory" text="Add Subcategory" />
+            <Button layoutX="389.0" layoutY="59.0" mnemonicParsing="false" onAction="#forward" text="Forward" />
+            <Button layoutX="475.0" layoutY="59.0" mnemonicParsing="false" onAction="#delete" text="Delete" />
             </children>
         </AnchorPane>
     </children>
