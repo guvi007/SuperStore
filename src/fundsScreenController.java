@@ -1,3 +1,8 @@
+/**
+ * Controller for adding funds
+ * @author Apoorv Singh, Gaurav Aggarwal
+ */
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,10 +18,18 @@ public class fundsScreenController {
     @FXML
     private TextField funds;
 
+    /**
+     * Sets up the screen
+     * @param x The end user
+     */
     public void setEndUser(EndUser x) {
         this.eu = x;
     }
 
+    /**
+     * Confirms the increment of funds and returns the homepage of enduser
+     * @throws IOException Throws by the load function
+     */
     public void confirm() throws IOException {
         int x = Integer.valueOf(funds.getText());
         this.eu.setFunds(this.eu.getFunds() + x);
