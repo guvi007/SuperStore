@@ -47,7 +47,7 @@ public class endUserScreenController {
         loader.setLocation(getClass().getResource("./GUI/searchStore.fxml"));
         Parent root = loader.load();
         searchStoreController ssc = loader.getController();
-//        ssc.setScreen();
+        ssc.setScreen(this.endUser);
         primaryStage.setTitle("Select Store");
         primaryStage.resizableProperty().setValue(Boolean.FALSE);
         primaryStage.setScene(new Scene(root, 800, 600));

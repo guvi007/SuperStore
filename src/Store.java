@@ -119,4 +119,8 @@ public class Store implements Building, Serializable {
     public String toString() {
         return this.ID + " : " + this.getName().toUpperCase();
     }
+
+    public HashMap<String, ArrayList<Object>> getCatalogue() {
+        return this.catalogue.getProducts();
+    }
 }

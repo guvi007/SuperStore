@@ -57,7 +57,7 @@ public class Database implements Serializable {
         return this.warehouseDatabase.warehouseList();
     }
 
-    ArrayList<String> storeList() {
+    ArrayList<Store> storeList() {
         return this.storeDatabase.storeList();
     }
 }

@@ -61,8 +61,11 @@ public class StoreDatabase implements Serializable {
         return (Store)store;
     }
 
-    public ArrayList<String> storeList() {
-        ArrayList <String> storeList = (ArrayList<String>) this.stores.keySet();
+    public ArrayList<Store> storeList() {
+        ArrayList <Store> storeList = new ArrayList<>();
+        for (String a : this.stores.keySet()) {
+            storeList.add((Store)stores.get(a));
+        }
         return storeList;
     }
 
