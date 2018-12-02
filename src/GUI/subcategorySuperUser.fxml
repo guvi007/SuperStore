@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="577.0" prefWidth="776.0" style="-fx-background-color: #DDDDDD;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="categorySuperUser">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="577.0" prefWidth="776.0" style="-fx-background-color: #DDDDDD;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="subcategorySuperUser">
     <children>
         <AnchorPane layoutX="87.0" layoutY="-1.0" maxWidth="1.7976931348623157E308" prefHeight="178.0" prefWidth="654.0" style="-fx-background-color: #3196DE;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
             <children>
@@ -29,7 +29,7 @@
         <AnchorPane layoutX="46.0" layoutY="73.0" prefHeight="490.0" prefWidth="682.0" style="-fx-background-color: white; -fx-background-radius: 8px;" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="46.0" AnchorPane.rightAnchor="48.0" AnchorPane.topAnchor="73.0">
             <children>
                 <ListView fx:id="list" layoutX="30.0" layoutY="94.0" onMouseClicked="#forward" prefHeight="389.0" prefWidth="633.0" />
-                <Text fill="#3196de" layoutX="30.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Category">
+                <Text fill="#3196de" layoutX="30.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select SubCategory">
                     <font>
                         <Font name="System Bold" size="18.0" />
                     </font>
