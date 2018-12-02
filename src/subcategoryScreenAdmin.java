@@ -41,7 +41,7 @@ public class subcategoryScreenAdmin {
         loader.setLocation(getClass().getResource("./GUI/newCategoryScreen.fxml"));
         Parent root = loader.load();
         addStuffController csc = loader.getController();
-        csc.setUp((Building)s, category);
+        csc.setUp((Building)s, category, this);
         primaryStage.setTitle("Category Screen");
         primaryStage.resizableProperty().setValue(Boolean.FALSE);
         primaryStage.setScene(new Scene(root, 800, 600));
@@ -67,6 +67,19 @@ public class subcategoryScreenAdmin {
         productsScreenAdmin csc = loader.getController();
         csc.setValues(s, selected);
         primaryStage.setTitle("Products Screen");
+        primaryStage.resizableProperty().setValue(Boolean.FALSE);
+        primaryStage.setScene(new Scene(root, 800, 600));
+        primaryStage.show();
+    }
+
+    public void back() throws IOException{
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("./GUI/categoryScreenAdmin.fxml"));
+        Parent root = loader.load();
+        categoryScreenAdmin wsi = loader.getController();
+        wsi.setValues(s);
+        Stage primaryStage = Main.primaryStage;
+        primaryStage.setTitle("Warehouse Products");
         primaryStage.resizableProperty().setValue(Boolean.FALSE);
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();

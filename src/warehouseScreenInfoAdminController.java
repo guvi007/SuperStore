@@ -72,7 +72,18 @@ public class warehouseScreenInfoAdminController {
         warehouse.setK(Integer.parseInt(k.getText()));
     }
 
-    public void products() {
+    public void products() throws IOException{
         changeValues();
+
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("./GUI/categoryScreenAdmin.fxml"));
+        Parent root = loader.load();
+        categoryScreenAdmin wsi = loader.getController();
+        wsi.setValues(warehouse);
+        Stage primaryStage = Main.primaryStage;
+        primaryStage.setTitle("Warehouse Products");
+        primaryStage.resizableProperty().setValue(Boolean.FALSE);
+        primaryStage.setScene(new Scene(root, 800, 600));
+        primaryStage.show();
     }
 }

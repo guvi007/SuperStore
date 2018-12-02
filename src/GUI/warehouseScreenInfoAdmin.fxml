@@ -52,7 +52,7 @@
                         <Image url="@warehouse.png" />
                     </image>
                 </ImageView>
-                <Button fx:id="products" layoutX="67.0" layoutY="311.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="128.0" style="-fx-background-radius: 8PX;" text=" PRODUCTS">
+                <Button layoutX="67.0" layoutY="311.0" mnemonicParsing="false" onAction="#products" prefHeight="39.0" prefWidth="128.0" style="-fx-background-radius: 8PX;" text=" PRODUCTS">
                     <font>
                         <Font size="16.0" />
                     </font>

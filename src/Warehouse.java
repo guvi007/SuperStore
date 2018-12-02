@@ -30,12 +30,12 @@ public class Warehouse implements Building, Serializable {
 
     @Override
     public void addStuff(String Category, Object stuff) {
-
+        this.catalogue.addStuff(Category, stuff);
     }
 
     @Override
     public void deleteStuff(String parentCategory, Object stuff) {
-
+        this.catalogue.deleteStuff(parentCategory, stuff);
     }
 
     @Override

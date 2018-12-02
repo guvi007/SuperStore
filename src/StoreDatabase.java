@@ -116,4 +116,14 @@ public class StoreDatabase implements Serializable {
             }
         }
     }
+
+    public ArrayList<Object> returnForConfig() {
+        ArrayList<Object> a = new ArrayList<>();
+        a.add(stores);
+        a.add(storeAdmins);
+        a.add(nameToIdAdmins);
+        a.add(nameToIdAdmins);
+        a.add(numStores);
+        return a;
+    }
 }

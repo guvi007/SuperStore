@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.*;
+import java.util.ArrayList;
 
 public class Main extends Application implements Serializable {
     public static Stage primaryStage;
@@ -51,7 +52,8 @@ public class Main extends Application implements Serializable {
             out.writeObject(d);
         }
         finally {
-            out.close();
+            if(out!=null)
+                out.close();
         }
     }
 
@@ -62,7 +64,30 @@ public class Main extends Application implements Serializable {
             database = (Database) in.readObject();
         }
         finally {
-            in.close();
+            if(in!=null)
+                in.close();
         }
+    }
+
+    @Override
+    public void stop() throws IOException, ClassNotFoundException{
+        System.out.println("hi");
+//        ArrayList<Object> a = new ArrayList<>();
+//        ArrayList<Object> wareData = database.getWarehouseDatabase().returnForConfig();
+//        ArrayList<Object> storeData =database.getStoreDatabase().returnForConfig();
+//        for(Object temp: wareData) {
+//            a.add(temp);
+//        }
+//        for(Object temp2: storeData) {
+//            a.add(temp2);
+//        }
+//        ObjectOutputStream out = null;
+//        try {
+//            out = new ObjectOutputStream(new FileOutputStream("Database/config.txt"));
+//            out.writeObject(a);
+//        }
+//        finally {
+//            out.close();
+//        }
     }
 }

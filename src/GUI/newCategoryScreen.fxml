@@ -35,7 +35,10 @@
                </font>
             </Text>
             <Button layoutX="294.0" layoutY="295.0" mnemonicParsing="false" onAction="#okay" text="Okay" />
-            <Text fx:id="t" layoutX="305.0" layoutY="390.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Text fx:id="t" layoutX="305.0" layoutY="390.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font size="18.0" />
+               </font></Text>
          </children>
         </AnchorPane>
     </children>

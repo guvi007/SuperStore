@@ -13,6 +13,7 @@ public class addStuffController {
 
     private String node;
     private Building s;
+    private Object position;
 
     @FXML
     private TextField text;
@@ -20,9 +21,10 @@ public class addStuffController {
     @FXML
     private Text t;
 
-    void setUp(Building s, String node) {
+    void setUp(Building s, String node, Object d) {
         this.node = node;
         this.s = s;
+        this.position = d;
     }
 
     public void okay() throws IOException {
@@ -32,23 +34,38 @@ public class addStuffController {
             ArrayList<Object> array = w.getCatalogue().get(node);
             if (!(array.contains(value)))
                 display();
-            else
+            else {
                 s.addStuff(node, value);
+            }
         }
-        else
+        else {
+            System.out.println("lol");
             s.addStuff(node, value);
+        }
 
         Stage primaryStage = Main.primaryStage;
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("./GUI/categoryScreenAdmin.fxml"));
-        Parent root = loader.load();
-        categoryScreenAdmin csc = loader.getController();
-        csc.setValues(s);
-        primaryStage.setTitle("Category Screen");
+        Parent root;
+        if(position instanceof categoryScreenAdmin) {
+            loader.setLocation(getClass().getResource("./GUI/categoryScreenAdmin.fxml"));
+            root = loader.load();
+            categoryScreenAdmin csc = loader.getController();
+            csc.setValues(s);
+            primaryStage.setTitle("Category Screen");
+        }
+        else {
+            loader.setLocation(getClass().getResource("./GUI/subcategoryScreenAdmin.fxml"));
+            root = loader.load();
+            subcategoryScreenAdmin csc = loader.getController();
+            csc.setValues(s, node);
+            primaryStage.setTitle("Sub Category Screen");
+        }
         primaryStage.resizableProperty().setValue(Boolean.FALSE);
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();
     }
+
+
 
     void display() {
         t.setText("Invalid Addition");

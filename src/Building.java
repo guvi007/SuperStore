@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public interface Building {
 
     void addStuff(String Category, Object stuff);

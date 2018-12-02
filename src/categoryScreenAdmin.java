@@ -39,7 +39,7 @@ public class categoryScreenAdmin {
         loader.setLocation(getClass().getResource("./GUI/newCategoryScreen.fxml"));
         Parent root = loader.load();
         addStuffController csc = loader.getController();
-        csc.setUp((Building)s, "root");
+        csc.setUp(s, "root", this);
         primaryStage.setTitle("Category Screen");
         primaryStage.resizableProperty().setValue(Boolean.FALSE);
         primaryStage.setScene(new Scene(root, 800, 600));
@@ -58,15 +58,17 @@ public class categoryScreenAdmin {
     public void openSubcategory() throws IOException {
         String selectedCategory = categoryList.getSelectionModel().getSelectedItem();
 
-        Stage primaryStage = Main.primaryStage;
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("./GUI/subcategoryScreenAdmin.fxml"));
-        Parent root = loader.load();
-        subcategoryScreenAdmin csc = loader.getController();
-        csc.setValues(s, selectedCategory);
-        primaryStage.setTitle("SubCategory Screen");
-        primaryStage.resizableProperty().setValue(Boolean.FALSE);
-        primaryStage.setScene(new Scene(root, 800, 600));
-        primaryStage.show();
+        if(selectedCategory != null) {
+            Stage primaryStage = Main.primaryStage;
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("./GUI/subcategoryScreenAdmin.fxml"));
+            Parent root = loader.load();
+            subcategoryScreenAdmin csc = loader.getController();
+            csc.setValues(s, selectedCategory);
+            primaryStage.setTitle("SubCategory Screen");
+            primaryStage.resizableProperty().setValue(Boolean.FALSE);
+            primaryStage.setScene(new Scene(root, 800, 600));
+            primaryStage.show();
+        }
     }
 }

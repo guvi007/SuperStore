@@ -19,7 +19,7 @@ public class fundsScreenController {
 
     public void confirm() throws IOException {
         int x = Integer.valueOf(funds.getText());
-        this.eu.setFunds(x);
+        this.eu.setFunds(this.eu.getFunds() + x);
 
         Stage primaryStage = Main.primaryStage;
         FXMLLoader loader = new FXMLLoader();

@@ -91,4 +91,13 @@ public class WarehouseDatabase implements Serializable {
         }
     }
 
+    public ArrayList<Object> returnForConfig() {
+        ArrayList<Object> a = new ArrayList<>();
+        a.add(warehouses);
+        a.add(warehouseAdmins);
+        a.add(nameToIdWarehouse);
+        a.add(nameToIdAdmins);
+        a.add(numWarehouse);
+        return a;
+    }
 }
