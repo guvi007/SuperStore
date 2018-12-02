@@ -1,3 +1,7 @@
+/**
+ * This class is abstract for users
+ * @author Apoorv Singh, Gaurav Aggarwal
+ */
 import java.io.Serializable;
 
 public abstract class User implements Serializable {

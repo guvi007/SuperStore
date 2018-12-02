@@ -1,3 +1,7 @@
+/**
+ * This class is the Warehouse admin class
+ * @author Apoorv Singh, Gaurav Aggarwal
+ */
 import java.io.Serializable;
 
 public class WarehouseAdmin extends User implements Serializable {
@@ -15,11 +19,21 @@ public class WarehouseAdmin extends User implements Serializable {
         return (Warehouse)this.myWarehouse;
     }
 
+    /**
+     * adds Warehouse categories
+     * @param node
+     * @param o
+     */
     void addStuff(String node, Object o) {
         Warehouse s = (Warehouse) this.myWarehouse;
         s.addStuff(node, o);
     }
 
+    /**
+     * delete categories
+     * @param node
+     * @param o
+     */
     void deleteStuff(String node, Object o) {
         ((Warehouse)this.myWarehouse).deleteStuff(node, o);
     }
@@ -39,6 +53,12 @@ public class WarehouseAdmin extends User implements Serializable {
             ((Warehouse) this.myWarehouse).setH(h);
     }
 
+    /**
+     * updates values for the required product optimally
+     * @param p
+     * @param quantity
+     * @return
+     */
     int optimalWarehouse(Product p, int quantity) {
         Product req = null;
         int currMax = 0;

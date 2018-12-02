@@ -1,3 +1,7 @@
+/**
+ * This class is the for warehouse screen admin
+ * @author Apoorv Singh, Gaurav Aggarwal
+ */
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -24,6 +28,10 @@ public class warehouseScreenInfoAdminController {
     @FXML
     private ListView<Store> linkedStores;
 
+    /**
+     * sets initial values
+     * @param w
+     */
     public void setValues(Warehouse w) {
         warehouse = w;
         name.setText(w.getName());
@@ -41,6 +49,10 @@ public class warehouseScreenInfoAdminController {
         }
     }
 
+    /**
+     * Go to the catgory Screen to display all the categories present in the store.
+     * @throws IOException Given by the load
+     */
     public void signOut() throws IOException {
         changeValues();
         Stage primaryStage = Main.primaryStage;
@@ -51,6 +63,10 @@ public class warehouseScreenInfoAdminController {
         primaryStage.show();
     }
 
+    /**
+     * return to the previous screen
+     * @throws IOException Given by the load function
+     */
     public void back() throws IOException {
         changeValues();
 
@@ -72,6 +88,10 @@ public class warehouseScreenInfoAdminController {
         warehouse.setK(Integer.parseInt(k.getText()));
     }
 
+    /**
+     * redirects to the screen to show products
+     * @throws IOException
+     */
     public void products() throws IOException{
         changeValues();
 

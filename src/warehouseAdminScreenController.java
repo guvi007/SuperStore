@@ -1,3 +1,7 @@
+/**
+ * This class is the controller for warehouse Admin Screen
+ * @author Apoorv Singh, Gaurav Aggarwal
+ */
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,6 +17,10 @@ public class warehouseAdminScreenController {
     @FXML
     private Text welcome, name, id;
 
+    /**
+     * Sets inital values
+     * @param w
+     */
     public void setValues(WarehouseAdmin w) {
         admin = w;
         welcome.setText("WELCOME, " + w.getName());
@@ -20,6 +28,10 @@ public class warehouseAdminScreenController {
         id.setText(w.getID());
     }
 
+    /**
+     * Function for signing out the user, returns the user to the main screen
+     * @throws IOException Thrown by load function
+     */
     public void signOut() throws IOException {
         Stage primaryStage = Main.primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("./GUI/MainScreen.fxml"));
@@ -29,6 +41,10 @@ public class warehouseAdminScreenController {
         primaryStage.show();
     }
 
+    /**
+     * displays info for admin's warehouse
+     * @throws IOException
+     */
     public void myWarehouse() throws IOException{
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("./GUI/warehouseScreenInfoAdmin.fxml"));
@@ -42,6 +58,10 @@ public class warehouseAdminScreenController {
         primaryStage.show();
     }
 
+    /**
+     * displaying information for all the warehouses
+     * @throws IOException
+     */
     public void allWarehouse() throws IOException{
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("./GUI/searchWarehouse.fxml"));

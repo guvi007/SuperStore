@@ -1,3 +1,7 @@
+/**
+ * This class is the for warehouse database
+ * @author Apoorv Singh, Gaurav Aggarwal
+ */
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -26,6 +30,13 @@ public class WarehouseDatabase implements Serializable {
         }
     }
 
+    /**
+     * adds warehouse to the database
+     * @param WarehouseName
+     * @param adminName
+     * @param adminLogin
+     * @param adminPassword
+     */
     public void addWarehouse(String WarehouseName, String adminName, String adminLogin, String adminPassword) {
         String WarehouseId = "W-" + numWarehouse;
 
@@ -50,6 +61,10 @@ public class WarehouseDatabase implements Serializable {
         return (Warehouse) warehouses.get(warehouseID);
     }
 
+    /**
+     * delete the given warehouses
+     * @param warehouseID
+     */
     public void deleteWarehouse(String warehouseID) {
         String warehouseAdminName = ((Warehouse)warehouses.get(warehouseID)).getMyAdmin().getName();
         String adminLogin = nameToIdAdmins.get(warehouseAdminName);
@@ -68,6 +83,10 @@ public class WarehouseDatabase implements Serializable {
         return x;
     }
 
+    /**
+     * get the number of warehouses present
+     * @return
+     */
     public int getNumWarehouse() {
         return this.numWarehouse;
     }
@@ -78,12 +97,21 @@ public class WarehouseDatabase implements Serializable {
         return false;
     }
 
+    /**
+     * check if the admin login is present or not
+     * @param s
+     * @return
+     */
     public boolean isAdminLoginPresent(String s) {
         if(warehouseAdmins.containsKey(s))
             return true;
         return false;
     }
 
+    /**
+     * deletes the linked store
+     * @param s
+     */
     public void deleteLinkedStore(Store s) {
         for(String a : this.warehouses.keySet()) {
             Warehouse w = (Warehouse)this.warehouses.get(a);
@@ -91,6 +119,10 @@ public class WarehouseDatabase implements Serializable {
         }
     }
 
+    /**
+     * returns the data from configuration file
+     * @return
+     */
     public ArrayList<Object> returnForConfig() {
         ArrayList<Object> a = new ArrayList<>();
         a.add(warehouses);
@@ -101,6 +133,10 @@ public class WarehouseDatabase implements Serializable {
         return a;
     }
 
+    /**
+     * sets the data from configuration file
+     * @param a
+     */
     public void setForConfig(ArrayList<Object> a) {
         warehouses = (HashMap<String, Building>)(a.get(0));
         warehouseAdmins = (HashMap<String, User>)(a.get(1));

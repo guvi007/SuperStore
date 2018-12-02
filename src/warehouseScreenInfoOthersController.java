@@ -1,3 +1,7 @@
+/**
+ * This class is the controller for warehouse screen for others
+ * @author Apoorv Singh, Gaurav Aggarwal
+ */
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -39,6 +43,10 @@ public class warehouseScreenInfoOthersController {
         }
     }
 
+    /**
+     * return to the previous screen
+     * @throws IOException Given by the load function
+     */
     public void back() throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("./GUI/searchWarehouse.fxml"));
@@ -52,6 +60,10 @@ public class warehouseScreenInfoOthersController {
         primaryStage.show();
     }
 
+    /**
+     * Function for signing out the user, returns the user to the main screen
+     * @throws IOException Thrown by load function
+     */
     public void signOut() throws IOException {
         Stage primaryStage = Main.primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("./GUI/MainScreen.fxml"));

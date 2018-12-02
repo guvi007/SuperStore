@@ -82,7 +82,7 @@ public class superUserController {
     }
 
     /**
-     * See 
+     * search for the warehouse info
      * @throws IOException
      */
     public void seeWarehouseInfo() throws IOException{
@@ -101,6 +101,10 @@ public class superUserController {
         }
     }
 
+    /**
+     * search for the store info
+     * @throws IOException
+     */
     public void seeStoreInfo() throws IOException{
         Store w = storeList.getSelectionModel().getSelectedItem();
         if(w != null) {
