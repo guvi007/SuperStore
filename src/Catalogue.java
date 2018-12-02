@@ -14,6 +14,11 @@ public class Catalogue implements Serializable {
         this.products.put("root", new ArrayList<Object>());
     }
 
+    /**
+     *
+     * @param Category
+     * @param o
+     */
     void addStuff(String Category, Object o) {
         this.products.get(Category).add(o);
         if (o instanceof Product)

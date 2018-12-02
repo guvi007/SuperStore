@@ -89,5 +89,11 @@ public class subcategoryScreenAdmin {
         String selected = list.getSelectionModel().getSelectedItem();
         this.hmap.get(category).remove(selected);
         this.hmap.remove(selected);
+        ArrayList<String> y = new ArrayList<String>();
+        for (Object a : hmap.get(category)) {
+            y.add((String)a);
+        }
+        ObservableList<String> x = FXCollections.observableList(y);
+        list.setItems(x);
     }
 }

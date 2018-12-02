@@ -75,5 +75,12 @@ public class categoryScreenAdmin {
     public void delete() {
         String selectedCategory = categoryList.getSelectionModel().getSelectedItem();
         this.hmap.remove(selectedCategory);
+        this.hmap.get("root").remove(selectedCategory);
+        ArrayList<String> y = new ArrayList<String>();
+        for (Object a : hmap.get("root")) {
+            y.add((String)a);
+        }
+        ObservableList<String> x = FXCollections.observableList(y);
+        categoryList.setItems(x);
     }
 }

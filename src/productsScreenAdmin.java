@@ -76,5 +76,11 @@ public class productsScreenAdmin {
         Product selected = list.getSelectionModel().getSelectedItem();
 
         this.hmap.get(subcategory).remove(selected);
+        ArrayList<Product> y = new ArrayList<Product>();
+        for (Object a : hmap.get(subcategory)) {
+            y.add((Product)a);
+        }
+        ObservableList<Product> x = FXCollections.observableList(y);
+        list.setItems(x);
     }
 }
