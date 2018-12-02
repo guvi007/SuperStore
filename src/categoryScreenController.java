@@ -23,7 +23,7 @@ public class categoryScreenController {
 
     private EndUser e;
     private HashMap<String, ArrayList<Object>> hmap;
-    private ArrayList<String> y;
+    private ArrayList<String> y = new ArrayList<>();
     private Store s;
 
     @FXML

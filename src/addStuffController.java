@@ -50,6 +50,7 @@ public class addStuffController {
         if (s instanceof Store) {
             Warehouse w =(Warehouse) ((Store)s).getLinkedWarehouse();
             ArrayList<Object> array = w.getCatalogue().get(node);
+
             if (!(array.contains(value)))
                 display();
             else {
@@ -83,6 +84,7 @@ public class addStuffController {
             primaryStage.setScene(new Scene(root, 800, 600));
             primaryStage.show();
         }
+        check = 0;
     }
 
 

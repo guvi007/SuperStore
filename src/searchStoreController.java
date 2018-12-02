@@ -39,16 +39,19 @@ public class searchStoreController {
     public void openStore() throws IOException {
         Store selectedStore = storeList.getSelectionModel().getSelectedItem();
 
-        Stage primaryStage = Main.primaryStage;
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("./GUI/categoryScreen.fxml"));
-        Parent root = loader.load();
-        categoryScreenController csc = loader.getController();
-        csc.setValues(selectedStore, eu);
-        primaryStage.setTitle("Category Screen");
-        primaryStage.resizableProperty().setValue(Boolean.FALSE);
-        primaryStage.setScene(new Scene(root, 800, 600));
-        primaryStage.show();
+        if(selectedStore != null) {
+            Stage primaryStage = Main.primaryStage;
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("./GUI/categoryScreen.fxml"));
+            Parent root = loader.load();
+            categoryScreenController csc = loader.getController();
+            csc.setValues(selectedStore, eu);
+            primaryStage.setTitle("Category Screen");
+            primaryStage.resizableProperty().setValue(Boolean.FALSE);
+            primaryStage.setScene(new Scene(root, 800, 600));
+            primaryStage.show();
+        }
+
     }
 
     /**

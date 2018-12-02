@@ -49,10 +49,16 @@ public class addProductController {
         if (s instanceof Store) {
             Warehouse w =(Warehouse) ((Store)s).getLinkedWarehouse();
             ArrayList<Object> array = w.getCatalogue().get(node);
-            if (!(array.contains(p)))
+            int f = 0;
+            for(Object a: array) {
+                if( a instanceof Product &&  ((Product)a).getName().equals(p.getName())) {
+                    s.addStuff(node,p);
+                    f = 1;
+                    break;
+                }
+            }
+            if (f==0)
                 display();
-            else
-                s.addStuff(node, p);
         }
         else
             s.addStuff(node, p);

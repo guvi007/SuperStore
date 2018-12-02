@@ -163,8 +163,16 @@ public class StoreDatabase implements Serializable {
         a.add(stores);
         a.add(storeAdmins);
         a.add(nameToIdAdmins);
-        a.add(nameToIdAdmins);
+        a.add(nameToIdStores);
         a.add(numStores);
         return a;
+    }
+
+    public void setForConfig(ArrayList<Object> a) {
+        stores = (HashMap<String, Building>)(a.get(0));
+        storeAdmins = (HashMap<String, User>)(a.get(1));
+        nameToIdAdmins = (HashMap<String, String>)(a.get(2));
+        nameToIdStores = (HashMap<String, String>)(a.get(3));
+        numStores = (int)(a.get(4));
     }
 }

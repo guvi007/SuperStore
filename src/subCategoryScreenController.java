@@ -18,7 +18,7 @@ public class subCategoryScreenController {
     private String cname;
     private EndUser e;
     private HashMap<String, ArrayList<Object>> hmap;
-    private ArrayList<String> y;
+    private ArrayList<String> y = new ArrayList<>();
     private Store selectedStore;
     private ArrayList<Product> productList;
 
@@ -33,8 +33,10 @@ public class subCategoryScreenController {
         this.e = e;
         this.hmap = hmap;
         this.selectedStore = s;
+        System.out.println(cname);
 
         for (Object a : hmap.get(cname)) {
+            System.out.println(a);
             y.add((String) a);
         }
         ObservableList<String> x = FXCollections.observableList(y);

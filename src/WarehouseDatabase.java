@@ -100,4 +100,12 @@ public class WarehouseDatabase implements Serializable {
         a.add(numWarehouse);
         return a;
     }
+
+    public void setForConfig(ArrayList<Object> a) {
+        warehouses = (HashMap<String, Building>)(a.get(0));
+        warehouseAdmins = (HashMap<String, User>)(a.get(1));
+        nameToIdWarehouse = (HashMap<String, String>)(a.get(2));
+        nameToIdAdmins = (HashMap<String, String>)(a.get(3));
+        numWarehouse = (int)(a.get(4));
+    }
 }
