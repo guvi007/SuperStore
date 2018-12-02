@@ -31,7 +31,7 @@
                         <Image url="@306473.png" />
                     </image>
                 </ImageView>
-                <Button alignment="CENTER" layoutX="82.0" layoutY="398.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="167.0" style="-fx-background-radius: 8PX;" text="SEARCH STORE">
+                <Button alignment="CENTER" layoutX="82.0" layoutY="398.0" mnemonicParsing="false" onAction="#searchStore" prefHeight="39.0" prefWidth="167.0" style="-fx-background-radius: 8PX;" text="SEARCH STORE">
                     <font>
                         <Font size="16.0" />
                     </font>

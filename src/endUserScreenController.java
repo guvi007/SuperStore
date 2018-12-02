@@ -40,4 +40,17 @@ public class endUserScreenController {
         primaryStage.setScene(new Scene(root, 400, 300));
         primaryStage.show();
     }
+
+    public void searchStore() throws IOException {
+        Stage primaryStage = Main.primaryStage;
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("./GUI/searchStore.fxml"));
+        Parent root = loader.load();
+        searchStoreController ssc = loader.getController();
+//        ssc.setScreen();
+        primaryStage.setTitle("Select Store");
+        primaryStage.resizableProperty().setValue(Boolean.FALSE);
+        primaryStage.setScene(new Scene(root, 800, 600));
+        primaryStage.show();
+    }
 }
