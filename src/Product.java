@@ -45,15 +45,12 @@ public class Product implements Serializable, Comparable<Product> {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        Product o = (Product) obj;
-        if (o.getName().equals(((Product) obj).name) && o.getID().equals(((Product) obj).ID))
-            return true;
-        return false;
+    public int compareTo(Product o) {
+        return this.name.compareTo(o.getName());
     }
 
     @Override
-    public int compareTo(Product o) {
-        return this.name.compareTo(o.getName());
+    public String toString() {
+        return this.getName() + " : " + this.getID();
     }
 }

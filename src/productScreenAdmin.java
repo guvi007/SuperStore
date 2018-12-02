@@ -36,8 +36,8 @@ public class productScreenAdmin {
     }
 
     public void edit() {
-        int q = Integer.valueOf(name.getText());
-        int pr = Integer.valueOf(name.getText());
+        int q = Integer.valueOf(quantity.getText());
+        int pr = Integer.valueOf(price.getText());
         p.setQuantity(q);
         p.setPrice(pr);
 

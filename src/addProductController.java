@@ -59,11 +59,11 @@ public class addProductController {
 
         Stage primaryStage = Main.primaryStage;
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("./GUI/subcategoryScreenAdmin.fxml"));
+        loader.setLocation(getClass().getResource("./GUI/productsScreenAdmin.fxml"));
         Parent root = loader.load();
-        subcategoryScreenAdmin csc = loader.getController();
+        productsScreenAdmin csc = loader.getController();
         csc.setValues(s, node);
-        primaryStage.setTitle("SubCategory Screen");
+        primaryStage.setTitle("Products");
         primaryStage.resizableProperty().setValue(Boolean.FALSE);
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();

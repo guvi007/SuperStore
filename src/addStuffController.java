@@ -19,6 +19,7 @@ public class addStuffController {
     private String node;
     private Building s;
     private Object position;
+    private int check = 0;
 
     @FXML
     private TextField text;
@@ -60,26 +61,28 @@ public class addStuffController {
             s.addStuff(node, value);
         }
 
-        Stage primaryStage = Main.primaryStage;
-        FXMLLoader loader = new FXMLLoader();
-        Parent root;
-        if(position instanceof categoryScreenAdmin) {
-            loader.setLocation(getClass().getResource("./GUI/categoryScreenAdmin.fxml"));
-            root = loader.load();
-            categoryScreenAdmin csc = loader.getController();
-            csc.setValues(s);
-            primaryStage.setTitle("Category Screen");
+        if(check == 0) {
+            Stage primaryStage = Main.primaryStage;
+            FXMLLoader loader = new FXMLLoader();
+            Parent root;
+            if(position instanceof categoryScreenAdmin) {
+                loader.setLocation(getClass().getResource("./GUI/categoryScreenAdmin.fxml"));
+                root = loader.load();
+                categoryScreenAdmin csc = loader.getController();
+                csc.setValues(s);
+                primaryStage.setTitle("Category Screen");
+            }
+            else {
+                loader.setLocation(getClass().getResource("./GUI/subcategoryScreenAdmin.fxml"));
+                root = loader.load();
+                subcategoryScreenAdmin csc = loader.getController();
+                csc.setValues(s, node);
+                primaryStage.setTitle("Sub Category Screen");
+            }
+            primaryStage.resizableProperty().setValue(Boolean.FALSE);
+            primaryStage.setScene(new Scene(root, 800, 600));
+            primaryStage.show();
         }
-        else {
-            loader.setLocation(getClass().getResource("./GUI/subcategoryScreenAdmin.fxml"));
-            root = loader.load();
-            subcategoryScreenAdmin csc = loader.getController();
-            csc.setValues(s, node);
-            primaryStage.setTitle("Sub Category Screen");
-        }
-        primaryStage.resizableProperty().setValue(Boolean.FALSE);
-        primaryStage.setScene(new Scene(root, 800, 600));
-        primaryStage.show();
     }
 
 
@@ -88,6 +91,22 @@ public class addStuffController {
      * (The category/subcategory is not in the linked warehouse)
      */
     void display() {
-        t.setText("Invalid Addition");
+        check = 1;
+        if(s instanceof Store) {
+            t.setText("Invalid Addition, Maybe this category isn't present in your linked warehouse!");
+        }
+        else {
+            t.setText("Invalid Addition");
+        }
+
+    }
+
+    public void signOut() throws IOException {
+        Stage primaryStage = Main.primaryStage;
+        Parent root = FXMLLoader.load(getClass().getResource("./GUI/MainScreen.fxml"));
+        primaryStage.setTitle("Main Screen");
+        primaryStage.resizableProperty().setValue(Boolean.FALSE);
+        primaryStage.setScene(new Scene(root, 800, 600));
+        primaryStage.show();
     }
 }

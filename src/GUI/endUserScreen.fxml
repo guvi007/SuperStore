@@ -18,7 +18,7 @@
                     </font>
                 </Button>
                 <FontAwesomeIcon glyphName="POWER_OFF" layoutX="721.0" layoutY="30.0" size="1.7em" />
-                <Text fill="WHITE" layoutX="247.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME, &lt;enduser&gt;">
+                <Text fill="WHITE" layoutX="247.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME, Customer">
                     <font>
                         <Font size="28.0" />
                     </font>
@@ -31,34 +31,24 @@
                         <Image url="@306473.png" />
                     </image>
                 </ImageView>
-                <Button alignment="CENTER" layoutX="82.0" layoutY="398.0" mnemonicParsing="false" onAction="#searchStore" prefHeight="39.0" prefWidth="167.0" style="-fx-background-radius: 8PX;" text="SEARCH STORE">
+                <Button alignment="CENTER" layoutX="84.0" layoutY="348.0" mnemonicParsing="false" onAction="#searchStore" prefHeight="39.0" prefWidth="167.0" style="-fx-background-radius: 8PX;" text="SEARCH STORE">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Button>
-                <FontAwesomeIcon fill="#2125f8" glyphName="SEARCH" layoutX="95.0" layoutY="423.0" size="1.4em" text="" wrappingWidth="15.142857551574707" />
-                <Button alignment="CENTER" layoutX="440.0" layoutY="399.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="167.0" style="-fx-background-radius: 8PX;" text="VIEW CART">
+                <FontAwesomeIcon fill="#2125f8" glyphName="SEARCH" layoutX="97.0" layoutY="373.0" size="1.4em" text="" wrappingWidth="15.142857551574707" />
+                <Button alignment="CENTER" layoutX="442.0" layoutY="349.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="167.0" style="-fx-background-radius: 8PX;" text="VIEW CART">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Button>
-                <FontAwesomeIcon glyphName="SHOPPING_CART" layoutX="451.0" layoutY="427.0" size="2em" />
-                <Text layoutX="232.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:">
+                <FontAwesomeIcon glyphName="SHOPPING_CART" layoutX="453.0" layoutY="377.0" size="2em" />
+                <Text layoutX="211.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Funds:">
                     <font>
                         <Font size="22.0" />
                     </font>
                 </Text>
-                <Text layoutX="232.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Funds:">
-                    <font>
-                        <Font size="22.0" />
-                    </font>
-                </Text>
-                <Text layoutX="325.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;username&gt;">
-                    <font>
-                        <Font size="22.0" />
-                    </font>
-                </Text>
-                <Text fx:id="funds" layoutX="325.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;funds&gt;">
+                <Text fx:id="funds" layoutX="304.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;funds&gt;">
                     <font>
                         <Font size="22.0" />
                     </font>
@@ -68,7 +58,7 @@
                         <Font name="FontAwesome Regular" size="25.0" />
                     </font>
                 </Text>
-                <Button layoutX="451.0" layoutY="300.0" mnemonicParsing="false" onAction="#addFunds" prefHeight="29.0" prefWidth="94.0" text="Add Funds">
+                <Button layoutX="430.0" layoutY="251.0" mnemonicParsing="false" onAction="#addFunds" prefHeight="29.0" prefWidth="94.0" text="Add Funds">
                     <graphic>
                         <FontAwesomeIcon fill="#1cb433" glyphName="PLUS" />
                     </graphic>

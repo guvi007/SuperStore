@@ -65,8 +65,8 @@ public class productsScreenAdmin {
         loader.setLocation(getClass().getResource("./GUI/newProductScreen.fxml"));
         Parent root = loader.load();
         addProductController csc = loader.getController();
-        csc.setUp((Building)s, subcategory);
-        primaryStage.setTitle("Category Screen");
+        csc.setUp(s, subcategory);
+        primaryStage.setTitle("Add Products");
         primaryStage.resizableProperty().setValue(Boolean.FALSE);
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();
