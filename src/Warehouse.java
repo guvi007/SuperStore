@@ -1,5 +1,6 @@
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Warehouse implements Building, Serializable {
@@ -128,5 +129,9 @@ public class Warehouse implements Building, Serializable {
         if(stores.contains(s)) {
             stores.remove(s);
         }
+    }
+
+    public HashMap<String, ArrayList<Object>> getCatalogue() {
+        return this.catalogue.getProducts();
     }
 }

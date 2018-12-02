@@ -12,6 +12,13 @@ public class Product implements Serializable, Comparable<Product> {
         this.quantity = quantity;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setID(String id) {
+        this.ID = id;
+    }
 
     public String getName() {
         return name;

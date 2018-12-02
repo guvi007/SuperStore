@@ -5,52 +5,44 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.HashMap;
 
-public class categoryScreenController {
+public class subcategoryScreenAdmin {
 
-    private EndUser e;
     private HashMap<String, ArrayList<Object>> hmap;
-    private ArrayList<String> y;
-    private Store s;
+    private Building s;
+    private String category;
 
     @FXML
-    ListView<String> categoryList;
+    ListView<String> list;
 
-    public void setValues(Store s, EndUser e) {
-        this.e = e;
-        this.s = s;
-        HashMap<String, ArrayList<Object>> catal = s.getCatalogue();
-        for (Object a : catal.get("root")) {
+    void setValues(Building s, String category) {
+        if (s instanceof Warehouse)
+            this.hmap = ((Warehouse) s).getCatalogue();
+        else
+            this.hmap = ((Store) s).getCatalogue();
+        this.category = category;
+        ArrayList<String> y = new ArrayList<String>();
+        for (Object a : hmap.get(category)) {
             y.add((String)a);
         }
+        this.s = s;
         ObservableList<String> x = FXCollections.observableList(y);
-        categoryList.setItems(x);
+        list.setItems(x);
     }
 
-    public void sortList() {
-        Collections.sort(y);
-        ObservableList<String> x = FXCollections.observableList(y);
-        categoryList.setItems(x);
-    }
-
-    public void openSubcategory() throws IOException {
-        String categoryName = categoryList.getSelectionModel().getSelectedItem();
-
+    public void addsubCategory() throws IOException {
         Stage primaryStage = Main.primaryStage;
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("./GUI/subCategoryScreen.fxml"));
+        loader.setLocation(getClass().getResource("./GUI/newCategoryScreen.fxml"));
         Parent root = loader.load();
-        subCategoryScreenController scsc = loader.getController();
-        scsc.setValues(s, categoryName, e, hmap);
-        primaryStage.setTitle("Sub-Category Screen");
+        addStuffController csc = loader.getController();
+        csc.setUp((Building)s, category);
+        primaryStage.setTitle("Category Screen");
         primaryStage.resizableProperty().setValue(Boolean.FALSE);
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();
@@ -65,18 +57,18 @@ public class categoryScreenController {
         primaryStage.show();
     }
 
-    public void back() throws IOException {
+    public void openProducts() throws IOException {
+        String selected = list.getSelectionModel().getSelectedItem();
+
         Stage primaryStage = Main.primaryStage;
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("./GUI/searchStore.fxml"));
+        loader.setLocation(getClass().getResource("./GUI/productsScreenAdmin.fxml"));
         Parent root = loader.load();
-        searchStoreController ssc = loader.getController();
-        ssc.setScreen(this.e);
-        primaryStage.setTitle("Select Store");
+        productsScreenAdmin csc = loader.getController();
+        csc.setValues(s, selected);
+        primaryStage.setTitle("Products Screen");
         primaryStage.resizableProperty().setValue(Boolean.FALSE);
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();
     }
-
-
 }

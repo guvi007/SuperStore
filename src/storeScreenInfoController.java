@@ -49,4 +49,5 @@ public class storeScreenInfoController {
         Main.giveDatabase().getWarehouseDatabase().deleteLinkedStore(s);
         back();
     }
+
 }

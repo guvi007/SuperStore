@@ -61,7 +61,16 @@ public class storeScreenInfoAdminController {
         primaryStage.show();
     }
 
-    public void products() {
-        changeValues();
+    public void openCategory() throws IOException {
+        Stage primaryStage = Main.primaryStage;
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("./GUI/categoryScreenAdmin.fxml"));
+        Parent root = loader.load();
+        categoryScreenAdmin csc = loader.getController();
+        csc.setValues(store);
+        primaryStage.setTitle("Category Screen");
+        primaryStage.resizableProperty().setValue(Boolean.FALSE);
+        primaryStage.setScene(new Scene(root, 800, 600));
+        primaryStage.show();
     }
 }
